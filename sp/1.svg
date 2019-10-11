@@ -5,11 +5,11 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   id="svg856"
-   version="1.1"
-   viewBox="0 0 63.764584 13.49375"
+   width="63.764584mm"
    height="13.49375mm"
-   width="63.764584mm">
+   viewBox="0 0 63.764584 13.49375"
+   version="1.1"
+   id="svg856">
   <defs
      id="defs850" />
   <metadata
@@ -25,19 +25,20 @@
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(87.822768,54.461161)"
-     id="layer1">
+     style="fill:#ffffff;fill-opacity:1"
+     id="layer1"
+     transform="translate(87.822768,54.461161)">
     <path
-       d="m -87.690476,-54.328869 v 13.229166 h 19.84375 l 6.614583,-6.614583 -6.614583,-6.614583 h -19.84375"
-       stroke-miterlimit="10"
-       pointer-events="none"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:10;fill-opacity:1"
        id="path4"
-       style="fill:none;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:10" />
-    <path
-       d="m -24.190476,-41.099703 v -13.229166 h -19.84375 l -6.614584,6.614583 6.614584,6.614583 h 19.84375"
-       stroke-miterlimit="10"
        pointer-events="none"
+       stroke-miterlimit="10"
+       d="m -87.690476,-54.328869 v 13.229166 h 19.84375 l 6.614583,-6.614583 -6.614583,-6.614583 h -19.84375" />
+    <path
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:10;fill-opacity:1"
        id="path6"
-       style="fill:none;stroke:#000000;stroke-width:0.26458332;stroke-miterlimit:10" />
+       pointer-events="none"
+       stroke-miterlimit="10"
+       d="m -24.190476,-41.099703 v -13.229166 h -19.84375 l -6.614584,6.614583 6.614584,6.614583 h 19.84375" />
   </g>
 </svg>
