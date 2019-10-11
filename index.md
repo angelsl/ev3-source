@@ -306,8 +306,8 @@ Done!
 
 Note that there may be some warnings about file times in the future. That is normal; do not worry.
 
-[latest-img]: https://github.com/source-academy/ev3-source/releases/download/v0c/ev3-source.img.zip
-[latest-update]: https://github.com/source-academy/ev3-source/releases/download/v0c/ev3-source-update.sh
+[latest-img]: https://github.com/source-academy/ev3-source/releases/download/v0d/ev3-source.img.zip
+[latest-update]: https://github.com/source-academy/ev3-source/releases/download/v0d/ev3-source-update.sh
 
 ## Appendix: Making programs runnable via the brick's controls
 
