@@ -67,9 +67,17 @@ In each game, the two robots will be initially placed in one of the following po
 1. The two robots are anti-parallel to each other.
 1. The two robots are perpendicular to each other.
 
-Refer to the diagram below.
+Refer to the diagrams below.
 
-_TODO: Diagram_
+1. ![head-on](sp/1.svg)
+
+1. ![away](sp/2.svg)
+
+1. ![parallel](sp/3.svg)
+
+1. ![anti-parallel](sp/4.svg)
+
+1. ![perpendicular](sp/5.svg)
 
 ## Tournament format
 
