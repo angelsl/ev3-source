@@ -69,15 +69,13 @@ In each game, the two robots will be initially placed in one of the following po
 
 Refer to the diagrams below.
 
-1. ![head-on](sp/1.svg)
-
-1. ![away](sp/2.svg)
-
-1. ![parallel](sp/3.svg)
-
-1. ![anti-parallel](sp/4.svg)
-
-1. ![perpendicular](sp/5.svg)
+|   | Diagram                    |
+|:-:|:--------------------------:|
+| 1 | ![head-on](sp/1.svg)       |
+| 2 | ![away](sp/2.svg)          |
+| 3 | ![parallel](sp/3.svg)      |
+| 4 | ![anti-parallel](sp/4.svg) |
+| 5 | ![perpendicular](sp/5.svg) |
 
 ## Tournament format
 
