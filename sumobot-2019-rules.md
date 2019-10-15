@@ -2,17 +2,18 @@
 
 The _(tentative)_ sequence of events are as follows:
 
-|      Time     |          Event        |
-|:-------------:|:---------------------:|
-| 17:30 - 18:00 | Registration          |
-| 18:00 - 18:15 | Introduction          |
-| 18:15 - 19:15 | Sumobot Stage 1A      |
-| 19:15 - 19:35 | Tea Break             |
-| 19:35 - 20:30 | Sumobot Stage 1B      |
-| concurrently  | "Robots Got Talent"   |
-| 20:30 - 21:00 | Sumobot Finals        |
-| 21:00 - 21:15 | Trivia Contest Finals |
-| 21:15 - 21:30 | Prize presentations   |
+|      Time     |          Event                                    |
+|:-------------:|:-------------------------------------------------:|
+| 17:30 - 18:00 | Registration                                      |
+| 18:00 - 18:15 | Introduction                                      |
+| 18:15 - 19:15 | Sumobot Stage 1A                                  |
+| 19:15 - 19:35 | Tea Break                                         |
+| 19:35 - 20:30 | Sumobot Stage 1B                                  |
+| concurrently  | Robots Got Talent                                 |
+| 20:30 - 20:45 | Trivia Contest Finals                             |
+| 20:45 - 21:00 | Prize presentations (all contests except Sumobot) |
+| 21:00 - 21:30 | Sumobot Finals                                    |
+| 21:30 - 21:40 | Prize presentations for Sumobot                   |
 
 ## Rules and Regulations
 
