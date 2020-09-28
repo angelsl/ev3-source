@@ -24,3 +24,10 @@ jobs:
     - name: check the outputs
       run: |
         file build-ev3/sling build-ev3/sinter_host
+    - name: build image
+      run: ./build_image.sh
+    - uses: actions/upload-artifact@v2
+      with:
+        name: image
+        path: ev3-source.img
+        if-no-files-found: error
