@@ -23,5 +23,4 @@ jobs:
       run: ./build_sling.sh
     - name: check the outputs
       run: |
-        file build-ev3/sling
-        file build-ev3/sinter_host
+        file build-ev3/sling build-ev3/sinter_host

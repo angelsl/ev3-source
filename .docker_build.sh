@@ -14,3 +14,4 @@ cmake "$SCRIPT_DIR/sling/linux" \
   -DSLING_SINTERHOST_PRERUN=../../../host_prerun.c \
   -DCMAKE_TOOLCHAIN_FILE=/home/compiler/toolchain-armel.cmake
 make -j$(nproc)
+arm-linux-gnueabi-strip sling sinter_host
