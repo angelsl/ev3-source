@@ -1,0 +1,2 @@
+FROM ev3dev/ev3dev-stretch-ev3-base
+RUN ["sudo", "bash", "-c", "apt-get update && apt-get install --yes --no-install-recommends libarchive13"]

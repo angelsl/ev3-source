@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  push:
+    branches: [ sling ]
+  pull_request:
+    branches: [ sling ]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - name: install brickstrap
+      run: |
+        sudo add-apt-repository ppa:ev3dev/tools
+        sudo apt-get update
+        sudo apt-get install --yes --no-install-recommends brickstrap
+    - name: build sling and sinter
+      run: ./build_sling.sh
+    - name: check the outputs
+      run: |
+        file build-ev3/sling
+        file build-ev3/sinter_host

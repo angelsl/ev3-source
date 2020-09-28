@@ -1,0 +1,3 @@
+[submodule "sling"]
+	path = sling
+	url = https://github.com/source-academy/sling.git
