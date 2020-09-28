@@ -13,6 +13,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: recursive
+    - uses: satackey/action-docker-layer-caching@v0.0.8
     - name: install brickstrap
       run: |
         sudo apt-get update
