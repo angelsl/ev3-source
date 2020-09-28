@@ -11,7 +11,7 @@ cp ../build-ev3/{sling,sinter_host} .
 
 docker build -t sourceacademy/ev3-source .
 
-TMPDIR=$(mktemp -d)
+TMPDIR=. # $(mktemp -d)
 TARFILE="$TMPDIR/ev3-source.tar"
 IMGFILE="$TMPDIR/ev3-source.img"
 
@@ -25,5 +25,5 @@ echo 'Using BRICKSTRAP_IMAGE_FILE_SIZE='$BRICKSTRAP_IMAGE_FILE_SIZE
 bash "$SCRIPT_DIR/brickstrap.sh" create-image "$TARFILE" "$IMGFILE"
 
 mv "$IMGFILE" "$SCRIPT_DIR"
-rm -rf "$TMPDIR"
+# rm -rf "$TMPDIR"
 >&2 echo "Image created at $SCRIPT_DIR/$(basename "$IMGFILE")"
