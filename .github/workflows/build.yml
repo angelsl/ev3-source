@@ -24,6 +24,8 @@ jobs:
     - name: check the outputs
       run: |
         file build-ev3/sling build-ev3/sinter_host
+    - name: make vmlinuz readable
+      run: sudo chmod 755 /boot/vmlinuz*
     - name: build image
       run: ./build_image.sh
     - uses: actions/upload-artifact@v2
