@@ -1,10 +1,10 @@
 name: Build
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ sling ]
-  pull_request:
-    branches: [ sling ]
+    tags:
+      - 'sling-*'
 
 jobs:
   build:
@@ -29,7 +29,27 @@ jobs:
     - name: build image
       run: ./build_image.sh
     - uses: actions/upload-artifact@v2
+      if: ${{ github.event_name == 'workflow_dispatch' }}
       with:
         name: image
-        path: ev3-source.img
+        path: ev3-source.img.zip
         if-no-files-found: error
+    - id: create_release
+      uses: actions/create-release@v1
+      if: ${{ github.event_name == 'push' }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: ${{ github.ref }}
+        body: ""
+        draft: true
+    - uses: actions/upload-release-asset@v1
+      if: ${{ github.event_name == 'push' }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+        asset_path: ./ev3-source.img.zip
+        asset_name: ev3-source-${{ github.ref }}.img.zip
+        asset_content_type: application/zip
