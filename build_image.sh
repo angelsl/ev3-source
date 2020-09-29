@@ -25,6 +25,8 @@ echo 'Using BRICKSTRAP_IMAGE_FILE_SIZE='$BRICKSTRAP_IMAGE_FILE_SIZE
 bash "$SCRIPT_DIR/brickstrap.sh" create-image "$TARFILE" "$IMGFILE"
 rm "$TARFILE"
 
-zip -v "$OUTFILE" "$IMGFILE"
+pushd "$TMPDIR"
+zip -v "$OUTFILE" ev3-source.img
+popd
 rm -rf "$TMPDIR"
 >&2 echo "Image created at $OUTFILE"
