@@ -1,3 +1,4 @@
-build
-build-ev3
-build-image
+/build
+/build-ev3
+/image/sling
+/image/sinter_host
