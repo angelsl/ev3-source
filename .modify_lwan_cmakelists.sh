@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if ! grep -qs '# ADD-SLING-PANEL' CMakeLists.txt; then
-  cat <<EOF >> CMakeLists.txt
+  cat <<'EOF' >> CMakeLists.txt
 # ADD-SLING-PANEL
 add_executable(panel
   ../panel.c
