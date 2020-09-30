@@ -10,7 +10,7 @@ echo "robot ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/robot
 
 # install sling.service, set permissions
 mv /usr/local/bin/sling.service /usr/local/bin/panel.service /etc/systemd/system/
-chmod 644 /etc/systemd/system/sling.service /usr/local/bin/panel.service
+chmod 644 /etc/systemd/system/sling.service /etc/systemd/system/panel.service
 systemctl enable sling.service panel.service
 
 # set permissions to our executables
