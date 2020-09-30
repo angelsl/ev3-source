@@ -6,7 +6,7 @@ SCRIPT_DIR="$(dirname "$(realpath -s "${BASH_SOURCE[0]}")")"
 cd "$SCRIPT_DIR"
 
 cd image
-cp ../build-ev3/{sling,sinter_host} .
+cp ../build-ev3/{sling,sinter_host} ../lwan/build-ev3/panel .
 
 docker build -t sourceacademy/ev3-source .
 

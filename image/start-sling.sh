@@ -16,6 +16,8 @@ if [ ! -f "$SLING_SECRET_FILE" ]; then
   uuidgen -r > "$SLING_SECRET_FILE"
 fi
 
+chmod 644 "$SLING_SECRET_FILE"
+
 SLING_SECRET=$(cat "$SLING_SECRET_FILE")
 SLING_BACKEND="https://d1ygrvunq94rou.cloudfront.net/v1/devices/$SLING_SECRET"
 

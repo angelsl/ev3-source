@@ -1,3 +1,6 @@
 [submodule "sling"]
 	path = sling
 	url = https://github.com/source-academy/sling.git
+[submodule "lwan"]
+	path = lwan
+	url = https://github.com/lpereira/lwan.git
