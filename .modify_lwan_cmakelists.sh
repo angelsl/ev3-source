@@ -17,3 +17,7 @@ target_compile_options(panel
 target_link_libraries(panel ${LWAN_COMMON_LIBS} ${ADDITIONAL_LIBRARIES})
 EOF
 fi
+
+# FIXME https://github.com/lpereira/lwan/issues/293
+# We don't use WebSockets so it's fine..
+sed -i 's#static_assert#// static_assert#g' src/lib/lwan-websocket.c
