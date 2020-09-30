@@ -9,13 +9,12 @@ SCRIPT_DIR="$(dirname "$SCRIPT_PATH")"
 echo "robot ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/robot
 
 # install sling.service, set permissions
-mv /usr/local/bin/sling.service /usr/local/bin/panel.service /etc/systemd/system/
-chmod 644 /etc/systemd/system/sling.service /usr/local/bin/panel.service
-systemctl enable sling.service panel.service
+mv /usr/local/bin/sling.service /etc/systemd/system/
+chmod 644 /etc/systemd/system/sling.service
+systemctl enable sling.service
 
 # set permissions to our executables
-chmod 755 /usr/local/bin/sling /usr/local/bin/sinter_host /usr/local/bin/start-sling.sh /usr/local/bin/panel
-setcap cap_net_bind_service=+ep /usr/local/bin/panel
+chmod 755 /usr/local/bin/sling /usr/local/bin/sinter_host /usr/local/bin/start-sling.sh
 
 # disable systemd-resolved
 systemctl disable systemd-resolved.service
