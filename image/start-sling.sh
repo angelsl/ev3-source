@@ -19,7 +19,7 @@ fi
 chmod 644 "$SLING_SECRET_FILE"
 
 SLING_SECRET=$(cat "$SLING_SECRET_FILE")
-SLING_BACKEND="https://d1ygrvunq94rou.cloudfront.net/v1/devices/$SLING_SECRET"
+SLING_BACKEND="https://api.sourceacademy.nus.edu.sg/v1/devices/$SLING_SECRET"
 
 export SLING_HOST="$(curl -fs "$SLING_BACKEND/mqtt_endpoint")"
 export SLING_DEVICE_ID="$(curl -fs "$SLING_BACKEND/client_id")"
