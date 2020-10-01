@@ -56,7 +56,7 @@ machine](https://github.com/source-academy/sinter).
 This is what you should see when the EV3 has booted up with the microSD card
 inserted.
 
-![ev3-boot](https://s3-ap-southeast-1.amazonaws.com/mission-assets/missions/ev3-boot.png)
+![ev3-boot](screen.png)
 
 Tip: the number you see at the top-right of the screen is the battery voltage in
 volts. A fully charged battery should read somewhere around 8.3 V, and below 6
@@ -85,18 +85,60 @@ instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-v
 Once you have connected successfully, you should see your EV3's local IP address
 on the top left-hand corner of the EV3's screen.
 
-(TODO: INSERT SCREENSHOT)
+![ev3 screen](ip.png)
 
-Open `http://10.42.0.123/` in your browser, where `10.42.0.123` is the EV3's
-local IP address, shown on the top left-hand corner of the EV3's screen. Copy
-the device secret, then go to the Source Academy Playground and click on the
-rightmost side content tab (Remote Execution). Add a new device, give it a name
-and paste in the secret, then click on the entry that is created.
+Open `http://10.42.0.222/` in your browser, where `10.42.0.222` is the EV3's
+local IP address, shown on the top left-hand corner of the EV3's screen.
 
-Once you see "Connected to &lt;your device here&gt;", you should be able to run
-programs on the EV3!
+![](panel.png)
 
-(TODO: INSERT DEVIATIONS/CAVEATS)
+Copy the device secret, then go to the Source Academy Playground and click on
+the rightmost side content tab (Remote Execution).
+
+![](sa1.png)
+
+Add a new device, give it a name and paste in the secret.
+
+![](sa2.png)
+
+Then click on the new entry that is created. Once you see "Connected to &lt;your
+device here&gt;.", you should be able to run programs on the EV3!
+
+![](sa3.png)
+
+If you are stuck on "Connecting..." for a while, try selecting the device again
+to attempt a re-connection.
+
+This integration is still a work-in-progress, so there are definitely bugs.
+Please let us know if you encounter any. Note that the "Pause" button, as well
+as the REPL, chapter and library selectors are non-functional. We are still
+working on the user interface; please bear with us!
+
+There are some deviations between the full Source §3 and the Source §3 on the
+device:
+
+- These functions are not (yet) supported:
+  - list_to_string
+  - parse_int
+  - runtime
+  - prompt
+  - stringify
+- Numbers are single-precision floating points. This means that `16777216 + 1
+  === 16777216`.
+
+Avoid using large arrays. Note that sparse arrays are not supported, that is,
+assigning to a large index in the array (e.g. `a[500]`) will create an array of
+501 elements, the first 500 of which are `undefined`, and consume that much
+space.
+
+#### Tips
+
+Multiple users can connect to the same device at the same time. If one user
+clicks "Run", all users will see the device run and the device's output.
+
+You can use this feature with the collaborative editing feature so that all
+members of your Studio can work on the program together. You can also use it
+with the Google Drive integration to save different programs that you write.
 
 #### Troubleshooting
 
@@ -253,5 +295,5 @@ the Linux instructions to format your microSD card using the command line.
 Adapted from [the ev3dev
 website](https://www.ev3dev.org/docs/tutorials/writing-sd-card-image-linux-command-line/).
 
-[latest-img]: #
-[ev3-docs]: https://source-academy.github.io/ev3-source/jsdoc/
+[latest-img]: https://github.com/source-academy/ev3-source/releases/download/sling-v0.0.0-rc0/ev3-source-sling-v0.0.0-rc0.img.zip
+[ev3-docs]: https://source-academy.github.io/source/EV3/
