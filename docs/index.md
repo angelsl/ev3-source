@@ -157,8 +157,8 @@ const motorB = ev3_motorB();
 display(ev3_connected(motorA) ? "A connected" : "A not connected");
 display(ev3_connected(motorB) ? "B connected" : "B not connected");
 
-ev3_runForDistance(motorA, 3000, 100);
-ev3_runForDistance(motorB, -2000, 100);
+ev3_runToRelativePosition(motorA, 3000, 100);
+ev3_runToRelativePosition(motorB, -2000, 100);
 ev3_pause(1000);
 ```
 
