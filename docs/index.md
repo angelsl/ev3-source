@@ -295,5 +295,5 @@ the Linux instructions to format your microSD card using the command line.
 Adapted from [the ev3dev
 website](https://www.ev3dev.org/docs/tutorials/writing-sd-card-image-linux-command-line/).
 
-[latest-img]: https://github.com/source-academy/ev3-source/releases/download/sling-v0.0.2/ev3-source-sling-v0.0.2.img.zip
-[ev3-docs]: https://source-academy.github.io/source/EV3/
+[latest-img]: https://github.com/source-academy/ev3-source/releases/download/sling-v0.0.3/ev3-source-sling-v0.0.3.img.zip
+[ev3-docs]: https://docs.sourceacademy.org/EV3/
