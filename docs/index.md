@@ -49,9 +49,11 @@ page](#appendix-alternative-flashing-instructions).
 
 The environment that we have installed in the microSD card is a Linux
 distribution from a project called [ev3dev](http://www.ev3dev.org/). You can
-find out more about it from [the official website](http://www.ev3dev.org/). Your
-solutions will be run in Source running on the [Sinter virtual
-machine](https://github.com/source-academy/sinter).
+find out more about it from [the official website](http://www.ev3dev.org/). When
+you press "Run" in the Source Academy, your programs will be compiled to the Sinter
+Virtual Machine Language (SVML) by the Source Academy, the SVML code will be sent to
+the robot through the internet, and the robot then runs the SVML code on the [Sinter virtual
+machine](https://github.com/source-academy/sinter). (Please review Brief B5 to understand this process.)
 
 This is what you should see when the EV3 has booted up with the microSD card
 inserted.
