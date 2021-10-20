@@ -122,7 +122,7 @@ device:
 - These functions are not (yet) supported:
   - list_to_string
   - parse_int
-  - runtime
+  - get_time
   - prompt
   - stringify
 - Numbers are single-precision floating points. This means that `16777216 + 1
