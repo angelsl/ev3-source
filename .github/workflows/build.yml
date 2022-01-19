@@ -17,7 +17,7 @@ jobs:
     - name: install brickstrap
       run: |
         sudo apt-get update
-        sudo apt-get install --yes --no-install-recommends libguestfs-tools qemu-user-static
+        sudo apt-get install --yes --no-install-recommends libguestfs-tools qemu-user-static binfmt-support
         curl -LO https://raw.githubusercontent.com/ev3dev/brickstrap/master/src/brickstrap.sh
     - name: build sling and sinter
       run: ./build_sling.sh
