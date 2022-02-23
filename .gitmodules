@@ -1,3 +1,9 @@
 [submodule "sling"]
 	path = sling
 	url = https://github.com/source-academy/sling.git
+[submodule "go_ev3_qrcode_generator"]
+	path = go_ev3_qrcode_generator
+	url = https://github.com/RichDom2185/go_ev3_qrcode_generator
+[submodule "ev3-prompt-nusnet-credentials"]
+	path = ev3-prompt-nusnet-credentials
+	url = https://github.com/RichDom2185/ev3-prompt-nusnet-credentials.git

@@ -7,6 +7,7 @@ cd "$SCRIPT_DIR"
 
 cd image
 cp ../build-ev3/{sling,sinter_host} .
+cp -r ../build-ev3/executables/ .
 
 docker build -t sourceacademy/ev3-source .
 
