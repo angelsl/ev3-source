@@ -8,6 +8,9 @@ SCRIPT_DIR="$(dirname "$SCRIPT_PATH")"
 # allow passwordless sudo for robot
 echo "robot ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/robot
 
+# stop sudo from doing a DNS lookup -- ensures executables can be run when network is down
+echo -e "Defaults\t!fqdn" >> /etc/sudoers
+
 # install sling.service, set permissions
 mv /usr/local/bin/sling.service /usr/local/bin/panel.service /etc/systemd/system/
 chmod 644 /etc/systemd/system/sling.service /etc/systemd/system/panel.service
