@@ -21,3 +21,16 @@ To run this locally:
   - On Ubuntu, install `libguestfs-tools qemu-user-static binfmt-support`.
   - On Arch, install `binfmt-qemu-static qemu-user-static-bin libguestfs`. (Note, the first two are AUR packages.)
 - Download [`brickstrap.sh`](https://raw.githubusercontent.com/ev3dev/brickstrap/master/src/brickstrap.sh) to the current directory.
+
+## TLDR
+
+To build the image from the source code, make sure you are the the root of the repository, then run the following commands in order:
+
+```bash
+wget https://raw.githubusercontent.com/ev3dev/brickstrap/master/src/brickstrap.sh
+./build_sling.sh
+./build_prompt.sh
+./build_qrcode.sh
+./build_uuidtob62.sh
+./build_image.sh
+```
