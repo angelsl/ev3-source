@@ -10,10 +10,12 @@ export SINTER_HOST_PATH="/usr/local/bin/sinter_host"
 export SLING_PROGRAM_PATH="$SLING_DIR/program.svm"
 export SLING_KEY="$SLING_DIR/key.pem"
 export SLING_CERT="$SLING_DIR/cert.pem"
-export SLING_SECRET_FILE="$SLING_DIR/secret"
+export SLING_SECRET_FILE="$SLING_DIR/secret_b62"
+export SLING_UUID_FILE="$SLING_DIR/secret"
 
 if [ ! -f "$SLING_SECRET_FILE" ]; then
-  uuidgen -r > "$SLING_SECRET_FILE"
+  uuidgen -r > "$SLING_UUID_FILE"
+  uuidtob62 "$SLING_UUID_FILE" > "$SLING_SECRET_FILE"
 fi
 
 chmod 644 "$SLING_SECRET_FILE"

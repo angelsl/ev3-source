@@ -17,6 +17,7 @@ chmod 644 /etc/systemd/system/sling.service /etc/systemd/system/panel.service
 systemctl enable sling.service panel.service
 
 # set permissions to our executables
+chmod 755 /usr/local/bin/uuidtob62
 chmod 755 /usr/local/bin/sling /usr/local/bin/sinter_host /usr/local/bin/start-sling.sh
 
 # disable systemd-resolved
