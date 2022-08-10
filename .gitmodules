@@ -7,3 +7,6 @@
 [submodule "ev3-prompt-nusnet-credentials"]
 	path = ev3-prompt-nusnet-credentials
 	url = https://github.com/RichDom2185/ev3-prompt-nusnet-credentials.git
+[submodule "uuidtob62"]
+	path = uuidtob62
+	url = https://github.com/RichDom2185/uuidtob62.git
