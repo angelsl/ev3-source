@@ -47,7 +47,9 @@ EOF
 # make cgi-bin
 mkdir -p /srv/www/cgi-bin
 mv /usr/local/bin/show-secret.sh /srv/www/cgi-bin/index.cgi
+mv /usr/local/bin/show-qr.sh /srv/www/cgi-bin/qr.cgi
 chmod 755 /srv/www/cgi-bin/index.cgi
+chmod 755 /srv/www/cgi-bin/qr.cgi
 
 # delete ourselves
 rm -f "$SCRIPT_PATH"

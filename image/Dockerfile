@@ -1,5 +1,5 @@
 FROM ev3dev/ev3dev-stretch-ev3-base
-COPY executables/uuidtob62 sling sinter_host start-sling.sh bootstrap.sh sling.service panel.service show-secret.sh /usr/local/bin/
+COPY executables/uuidtob62 sling sinter_host start-sling.sh bootstrap.sh sling.service panel.service show-secret.sh show-qr.sh /usr/local/bin/
 RUN ["bash", "-c", "chmod 755 /usr/local/bin/bootstrap.sh && exec /usr/local/bin/bootstrap.sh"]
 
 COPY executables/show_qrcode executables/nus_login /home/robot/
