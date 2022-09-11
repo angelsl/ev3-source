@@ -172,50 +172,62 @@ For macOS users, we recommend [Etcher](https://etcher.io/). Otherwise, refer to 
 
 1.  Unzip the `ev3-source.img.zip` downloaded earlier to get `ev3-source.img`.
 
-        $ unzip ev3-source.img.zip
-        Archive:  ev3-source.img.zip
-          inflating: ev3-source.img
+    ```
+    $ unzip ev3-source.img.zip
+    Archive:  ev3-source.img.zip
+      inflating: ev3-source.img
+    ```
 
 1.  Make sure that you SD card is **unplugged**. Then run `df`. You should see something like this:
 
-        $ df -h
-        Filesystem      Size  Used Avail Use% Mounted on
-        /dev/sda1       119G   79G   34G  70% /
-        none            4.0K     0  4.0K   0% /sys/fs/cgroup
-        udev            7.8G   12K  7.8G   1% /dev
-        tmpfs           1.6G  1.1M  1.6G   1% /run
-        none            5.0M     0  5.0M   0% /run/lock
-        none            7.9G  1.5M  7.9G   1% /run/shm
-        none            100M  3.7M   97M   4% /run/user
+    ```
+    $ df -h
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/sda1       119G   79G   34G  70% /
+    none            4.0K     0  4.0K   0% /sys/fs/cgroup
+    udev            7.8G   12K  7.8G   1% /dev
+    tmpfs           1.6G  1.1M  1.6G   1% /run
+    none            5.0M     0  5.0M   0% /run/lock
+    none            7.9G  1.5M  7.9G   1% /run/shm
+    none            100M  3.7M   97M   4% /run/user
+    ```
 
 1.  Now insert your SD card and run `df` again. See the new entry (`/dev/sdb1`)? That is your SD card. `sdb` is the actual device name and `1` is the partition number. Your actual device may be named something different.
 
-        $ df -h
-        Filesystem      Size  Used Avail Use% Mounted on
-        /dev/sda1       119G   79G   34G  70% /
-        none            4.0K     0  4.0K   0% /sys/fs/cgroup
-        udev            7.8G   12K  7.8G   1% /dev
-        tmpfs           1.6G  1.1M  1.6G   1% /run
-        none            5.0M     0  5.0M   0% /run/lock
-        none            7.9G  1.5M  7.9G   1% /run/shm
-        none            100M  3.7M   97M   4% /run/user
-        /dev/sdb1       2.0G  0.0G  2.0G   0% /media/user/LABEL
+    ```
+    $ df -h
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/sda1       119G   79G   34G  70% /
+    none            4.0K     0  4.0K   0% /sys/fs/cgroup
+    udev            7.8G   12K  7.8G   1% /dev
+    tmpfs           1.6G  1.1M  1.6G   1% /run
+    none            5.0M     0  5.0M   0% /run/lock
+    none            7.9G  1.5M  7.9G   1% /run/shm
+    none            100M  3.7M   97M   4% /run/user
+    /dev/sdb1       2.0G  0.0G  2.0G   0% /media/user/LABEL
+    ```
 
 1.  Unmount your SD card. If it has more than one partition, you will need to do this for each partition.
 
-        $ sudo umount /dev/sdb1
+    ```
+    $ sudo umount /dev/sdb1
+    ```
 
 1.  This is the dangerous part. If you pick the wrong device, you could wipe out your hard drive, so BE CAREFUL!! When specifying the device, don't include the partition number.
 
     In this example we downloaded the compressed disk image file to `~/Downloads/` and our SD card is `/dev/sdb`. Adjust these values as needed. This will take a while.
 
-        $ sudo dd if=~/Downloads/ev3-source.img of=/dev/sdb bs=4M \
-              oflag=direct status=progress
-        [sudo] password for user:
+    ```
+    $ sudo dd if=~/Downloads/ev3-source.img of=/dev/sdb bs=4M \
+          oflag=direct status=progress
+    [sudo] password for user:
+    ```
 
 1.  When copying the image file has completed, run
 
-        $ sync
+    ```
+    $ sync
+    ```
 
     to make sure any cached disk writes have completed. Once `sync` is finished, it is safe to remove the SD card.
 
