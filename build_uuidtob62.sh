@@ -10,4 +10,4 @@ docker run --rm -v "$(realpath "$SCRIPT_DIR")/$REPO_DIR":/usr/src/uuidtob62 -w /
 
 cd "$SCRIPT_DIR"
 mkdir -p build-ev3/executables
-cp "$REPO_DIR/uuidtob62" build-ev3/executables/
+mv "$REPO_DIR/uuidtob62" build-ev3/executables/
