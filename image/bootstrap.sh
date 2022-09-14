@@ -37,6 +37,13 @@ dpkg -i busybox-static_1.22.0-19+b3_armel.deb
 systemctl disable uuidd.socket
 rm uuid-runtime_2.29.2-1+deb9u1_armel.deb busybox-static_1.22.0-19+b3_armel.deb
 
+# Install RTL8811CU drivers on first boot
+sed -e '/^\s*;;$/{i \
+        depmod\
+        modprobe 8821cu\
+        reboot' \
+    -e ':a;n;ba}' -i /etc/init.d/firstboot
+
 # make journald log to memory only
 cat <<EOF > /etc/systemd/journald.conf
 [Journal]
