@@ -4,9 +4,9 @@
 [submodule "go_ev3_qrcode_generator"]
 	path = go_ev3_qrcode_generator
 	url = https://github.com/RichDom2185/go_ev3_qrcode_generator
-[submodule "ev3-prompt-nusnet-credentials"]
-	path = ev3-prompt-nusnet-credentials
-	url = https://github.com/RichDom2185/ev3-prompt-nusnet-credentials.git
 [submodule "uuidtob62"]
 	path = uuidtob62
 	url = https://github.com/RichDom2185/uuidtob62.git
+[submodule "ev3dev-peap-gui-login"]
+	path = ev3dev-peap-gui-login
+	url = https://github.com/RichDom2185/ev3dev-peap-gui-login.git
