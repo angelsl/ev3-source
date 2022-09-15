@@ -8,10 +8,9 @@ Welcome to the world of LEGO Mindstorms EV3! Work together with your teammates t
 
 ## Contents
 
-1. [Environment setup](#1-environment-setup)
-1. [Writing and testing your solutions](#2-writing-and-testing-your-solutions)
+{:toc}
 
-## 1. Environment setup
+## 1 Setting up your EV3
 
 ### 1.1 Background
 
@@ -25,7 +24,7 @@ For the mission, it must be a robot that your Studio has built. Sharing of the s
 
 The environment that we have installed in the microSD card is a Linux distribution from a project called [ev3dev](http://www.ev3dev.org/). You can find out more about it from [the official website](http://www.ev3dev.org/). When you press "Run" in the Source Academy, your programs will be compiled to the Sinter Virtual Machine Language (SVML) by the Source Academy, the SVML code will be sent to the robot through the internet, and the robot then runs the SVML code on the [Sinter virtual machine](https://github.com/source-academy/sinter). (Please review Brief B5 to understand this process.)
 
-### 1.2 Installing the ev3dev image
+### 1.2 Installing the `ev3dev` image
 
 Download the [Source Academy's customised ev3dev image from here][latest-img]. Then, use an image burner of your choice to install the image onto the microSD card issued. You will require a microSD card reader for this. The instructions for each operating system are as follows:
 
@@ -35,21 +34,55 @@ Follow [this section &#40;"Flash the SD card"&#41; on the ev3dev site](https://w
 
 File Explorer (Windows)/Finder (macOS) may say that it is unable to read the card, or the card needs to be formatted. That is normal; just dismiss the message. Etcher will be able to flash the card.
 
-If this does not work, try our [alternative instructions at the end of the page](#alternative-flashing-instructions).
+If this does not work, try our [alternative instructions at the end of the page](#52-alternative-flashing-instructions).
 
-This is what you should see when the EV3 has booted up with the microSD card inserted.
+Once the image has been flashed onto the microSD card, insert it into the EV3, but do not power it on just yet.
 
-![ev3-boot](screen.png)
+#### 1.3 Starting up the EV3
 
-_Tip: the number you see at the top-right of the screen is the battery voltage in volts. A fully charged battery should read somewhere around 8.3 V, and below 6 V, your battery will be running flat soon._
+1. Plug in the WiFi dongle into the USB port of the EV3
+1. Power on the EV3 by pressing the center button and grab a cup of coffee. The first time powering it up, it might take a while to set up the systems automatically. Wait for the main menu to appear, **do not** do anything and just wait for it to restart automatically. This second time should be much faster, and once this is done, you are ready to proceed to the next step to connect to WiFi.
 
-## 2. Writing and testing your solutions
+   This is what you should see when the EV3 has booted up with the microSD card inserted.
 
-### Introduction
+   ![ev3-boot](screen.png)
+
+   _Tip: the number you see at the top-right of the screen is the battery voltage in volts. A fully charged battery should read somewhere around 8.3 V, and below 6 V, your battery will be running flat soon._
+
+## 2 Writing and testing your solutions
+
+### 2.1 Introduction
 
 Our customised EV3-Source image is integrated with the Source Academy. You can simply register your device with the Source Academy, write your programs in the playground in remote execution mode, and click "Run" as per normal to run your programs on the robot.
 
-### How to connect
+### 2.2 Connecting the EV3 to WiFi
+
+The preferred method of connecting the EV3 to the internet is via WiFi. This can be done in the one of the following ways:
+
+#### Connecting to NUS_STU
+
+Only one person per team needs to do this:
+
+1. From the main menu, select 'File Browser'
+1. Select 'nus_login'
+1. Key in your NUSNET user ID and press 'Ok'
+   Select the text field to open an on-screen keyboard, and use the up/down/left/right buttons to navigate the keys, and the center button to select a character.
+1. Key in your NUSNET password and press 'Ok'
+1. Confirm that your login details are correct and press 'Quit' to return to the file browser. If you have keyed in your details incorrectly, simply re-run the program to update the EV3 with the correct credentials.
+1. Go back to the main menu (use the button in the top-left corner to go back) and select 'Wireless and Networks'
+1. Select 'Wi-Fi' and ensure it is powered on
+
+That's it! If your credentials are correct, the EV3 should connect to NUS_STU within a few seconds. If the EV3 does not detect the WiFi network, you may want to select 'Start Scan' **once** to force a refresh.
+
+#### Connecting to a personal hotspot
+
+If you are not within range of NUS_STU, or if you prefer to use your own network, you can do the following instead:
+
+1. From the main menu, select 'Wireless and Networks'
+1. Select 'Wi-Fi' and ensure it is powered on
+1. Select your network and connect to it. If your network is secured with a password, the EV3 will prompt you for one when you press 'Connect'
+
+If connecting to WiFi does not work for some reason, please ask for help, but you may also try the following:
 
 <details><summary><b>Alternative connection methods</b></summary>
 
@@ -67,7 +100,34 @@ Once you have connected successfully, you should see your EV3's local IP address
 
 ![ev3 screen](ip.png)
 
-Open `http://10.42.0.222/` in your browser, where `10.42.0.222` is the EV3's local IP address, shown on the top left-hand corner of the EV3's screen.
+### 2.3 Pairing the EV3 to Source Academy
+
+Everyone on the team will have to do the following steps to link their team's EV3 with their Source Academy account. There are two methods to pair the EV3, feel free to choose whichever method is most convenient for you.
+
+#### Method 1: Scanning a QR code
+
+On a computer/mobile device (the latter is preferred because of a better camera):
+
+1. Go to the [Source Academy Playground](https://sourceacademy.nus.edu.sg/playground) and select the "Remote Execution" tab (the one with the satellite icon)
+1. Click on "Add new device..."
+1. Enter a name for you to identify your device (the name is up to you, and need not be the same across team members)
+1. Click the button on the right side of the "Secret" field to open a QR code scanner. You may need to grant Source Academy access to your camera in the browser
+1. You are now ready to scan the QR code on the EV3!
+
+Then, on the EV3 device:
+
+1. Go to the file browser and select 'show_qrcode'
+1. Place the EV3 such that the QR code is visible in the computer/phone's camera view in order to scan the QR code
+
+On your computer/phone, click the add button. You have succesfully linked the EV3 to your account!
+
+#### Method 2: Accessing the EV3 from a browser
+
+This method is kept as a backup instead you are unable to scan the QR code on the EV3 for one reason or another.
+
+<details><summary>Click to show details</summary>
+
+Using a phone or computer, open `http://10.42.0.222/` in your browser, where `10.42.0.222` is the EV3's local IP address, shown on the top left-hand corner of the EV3's screen.
 
 ![](panel.png)
 
@@ -79,11 +139,17 @@ Add a new device, give it a name and paste in the secret.
 
 ![](sa2.png)
 
-Then click on the new entry that is created. Once you see "Connected to &lt;your device here&gt;.", you should be able to run programs on the EV3!
+</details>
+
+---
+
+Click on the new entry that is created. Once you see "Connected to _<your_device_name>_.", you should be able to run programs on the EV3!
 
 ![](sa3.png)
 
 If you are stuck on "Connecting..." for a while, try selecting the device again to attempt a re-connection.
+
+### 2.4 Some things to take note
 
 This integration is still a work-in-progress, so there are definitely bugs. Please let us know if you encounter any. Note that the "Pause" button, as well as the REPL, chapter and library selectors are non-functional. We are still working on the user interface; please bear with us!
 
@@ -108,7 +174,7 @@ Avoid using large arrays. Note that sparse arrays are not supported, that is, as
 
 For macOS users, if you are running El Capitan (OS X 10.11) or higher, and connect using USB, you might not see 'CDC Composite Gadget' in the interfaces list under network configuration. Try to connect via Bluetooth instead.
 
-### Examples
+### 3 Examples
 
 #### Example 1
 
@@ -135,7 +201,7 @@ if (ev3_reflectedLightIntensity(color) > 20) {
 }
 ```
 
-### Source language
+## 4 Source language
 
 The language for this mission is Source §3 (including the list, streams and arrays library), plus the special [EV3 library][ev3-docs].
 
@@ -143,11 +209,11 @@ The language for this mission is Source §3 (including the list, streams and arr
 
 Part of the fun is learning how to troubleshoot. If you have difficulties, start by Googling your problems. For debugging, you can use the `display` function in your programs. The output of `display` will then appear on your screen.
 
-## Appendix
+## 5 Appendix
 
-### SSHing to the EV3
+### 5.1 SSH-ing to the EV3
 
-To SSH to the EV3, run
+The EV3 can also be accessed via SSH to get a full command line. To SSH to the EV3, run
 
 ```bash
 ssh robot@192.168.0.1
@@ -159,7 +225,7 @@ Enter your password when prompted. The default password is `maker`.
 
 If you are on Linux or macOS, you should have an SSH client already installed. Windows 10 includes an SSH client from version 1803 onwards. On older versions of Windows, you can use other SSH clients like [PuTTY](http://www.putty.org/). The username is `robot`, and the hostname is the IP address shown on the top-left of the EV3 screen.
 
-### Alternative Flashing Instructions
+### 5.2 Alternative flashing instructions
 
 <details><summary><b>Windows</b></summary>
 
