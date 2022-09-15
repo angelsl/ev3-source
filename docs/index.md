@@ -8,7 +8,10 @@ Welcome to the world of LEGO Mindstorms EV3! Work together with your teammates t
 
 ## Contents
 
-{:toc}
+1. [Setting up your EV3](#1-setting-up-your-ev3)
+1. [Writing and testing your solutions](#2-writing-and-testing-your-solutions)
+1. [Source language](#3-source-language)
+1. [Appendix](#4-appendix)
 
 ## 1 Setting up your EV3
 
@@ -34,7 +37,7 @@ Follow [this section &#40;"Flash the SD card"&#41; on the ev3dev site](https://w
 
 File Explorer (Windows)/Finder (macOS) may say that it is unable to read the card, or the card needs to be formatted. That is normal; just dismiss the message. Etcher will be able to flash the card.
 
-If this does not work, try our [alternative instructions at the end of the page](#52-alternative-flashing-instructions).
+If this does not work, try our [alternative instructions at the end of the page](#42-alternative-flashing-instructions).
 
 Once the image has been flashed onto the microSD card, insert it into the EV3, but do not power it on just yet.
 
@@ -84,17 +87,15 @@ If you are not within range of NUS_STU, or if you prefer to use your own network
 
 If connecting to WiFi does not work for some reason, please ask for help, but you may also try the following:
 
-<details><summary><b>Alternative connection methods</b></summary>
-
-The EV3 can also connect to your computer/phone over USB or Bluetooth. (The benefit of Bluetooth is, of course, that it is wireless, but it may be slightly less reliable.)
-
-To connect your EV3 to the Internet via Bluetooth, follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/).
-
-_Note: Bluetooth connection sharing is reported to no longer work with Windows 10. It remains working for macOS and Android. If you cannot use Bluetooth connection sharing, please use an alternative method._
-
-To connect your EV3 via the USB wire provided, you can follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/).
-
-</details>
+> **Alternative connection methods**
+>
+> The EV3 can also connect to your computer/phone over USB or Bluetooth. (The benefit of Bluetooth is, of course, that it is wireless, but it may be slightly less reliable.)
+>
+> To connect your EV3 to the Internet via Bluetooth, follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/).
+>
+> _Note: Bluetooth connection sharing is reported to no longer work with Windows 10. It remains working for macOS and Android. If you cannot use Bluetooth connection sharing, please use an alternative method._
+>
+> To connect your EV3 via the USB wire provided, you can follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/).
 
 Once you have connected successfully, you should see your EV3's local IP address on the top left-hand corner of the EV3's screen.
 
@@ -125,21 +126,17 @@ On your computer/phone, click the add button. You have succesfully linked the EV
 
 This method is kept as a backup instead you are unable to scan the QR code on the EV3 for one reason or another.
 
-<details><summary>Click to show details</summary>
-
-Using a phone or computer, open `http://10.42.0.222/` in your browser, where `10.42.0.222` is the EV3's local IP address, shown on the top left-hand corner of the EV3's screen.
-
-![](panel.png)
-
-Copy the device secret, then go to the Source Academy Playground and click on the rightmost side content tab (Remote Execution).
-
-![](sa1.png)
-
-Add a new device, give it a name and paste in the secret.
-
-![](sa2.png)
-
-</details>
+> Using a phone or computer, open `http://10.42.0.222/` in your browser, where `10.42.0.222` is the EV3's local IP address, shown on the top left-hand corner of the EV3's screen.
+>
+> ![](panel.png)
+>
+> Copy the device secret, then go to the Source Academy Playground and click on the rightmost side content tab (Remote Execution).
+>
+> ![](sa1.png)
+>
+> Add a new device, give it a name and paste in the secret.
+>
+> ![](sa2.png)
 
 ---
 
@@ -174,7 +171,7 @@ Avoid using large arrays. Note that sparse arrays are not supported, that is, as
 
 For macOS users, if you are running El Capitan (OS X 10.11) or higher, and connect using USB, you might not see 'CDC Composite Gadget' in the interfaces list under network configuration. Try to connect via Bluetooth instead.
 
-### 3 Examples
+### 2.5 Examples
 
 #### Example 1
 
@@ -201,7 +198,7 @@ if (ev3_reflectedLightIntensity(color) > 20) {
 }
 ```
 
-## 4 Source language
+## 3 Source language
 
 The language for this mission is Source §3 (including the list, streams and arrays library), plus the special [EV3 library][ev3-docs].
 
@@ -209,9 +206,9 @@ The language for this mission is Source §3 (including the list, streams and arr
 
 Part of the fun is learning how to troubleshoot. If you have difficulties, start by Googling your problems. For debugging, you can use the `display` function in your programs. The output of `display` will then appear on your screen.
 
-## 5 Appendix
+## 4 Appendix
 
-### 5.1 SSH-ing to the EV3
+### 4.1 SSH-ing to the EV3
 
 The EV3 can also be accessed via SSH to get a full command line. To SSH to the EV3, run
 
@@ -225,96 +222,90 @@ Enter your password when prompted. The default password is `maker`.
 
 If you are on Linux or macOS, you should have an SSH client already installed. Windows 10 includes an SSH client from version 1803 onwards. On older versions of Windows, you can use other SSH clients like [PuTTY](http://www.putty.org/). The username is `robot`, and the hostname is the IP address shown on the top-left of the EV3 screen.
 
-### 5.2 Alternative flashing instructions
+### 4.2 Alternative flashing instructions
 
-<details><summary><b>Windows</b></summary>
+#### Windows
 
-> - Download the Win32DiskImager software from [Sourceforge](https://sourceforge.net/projects/win32diskimager/files/Archive/Win32DiskImager-1.0.0-binary.zip/download).
-> - You should get a zip file named "Win32DiskImager-1.0.0-binary.zip".
-> - Unzip it and now you have a new folder called "Win32DiskImager-1.0.0-binary".
-> - If your computer has a slot for micro SD cards, insert the card. If not, insert the card into an SD card reader, then connect the reader to your computer.
-> - Run the file named **Win32DiskImager.exe** (in Windows Vista and higher, you may need to right-click this file and choose "Run as administrator").
-> - If the micro SD card (Device) you are using is not found automatically, then click on the drop down box on the right and select the micro SD card letter you just plugged in (e.g. [H:]).
-> - Be careful to select the correct drive; if you get the wrong one, you can destroy your data on your computer’s hard disk!
-> - In the Image File box, choose the `.img` file that you downloaded and click "Write". _Note: if a warning message appears, click YES._
-> - Your microSD card is ready to be used.
->
-> _Instructions adapted from [udoo](https://www.udoo.org/docs-neo/Getting_Started/Create_a_bootable_MicroSD_card_for_UDOO_Neo.html)_
+- Download the Win32DiskImager software from [Sourceforge](https://sourceforge.net/projects/win32diskimager/files/Archive/Win32DiskImager-1.0.0-binary.zip/download).
+- You should get a zip file named "Win32DiskImager-1.0.0-binary.zip".
+- Unzip it and now you have a new folder called "Win32DiskImager-1.0.0-binary".
+- If your computer has a slot for micro SD cards, insert the card. If not, insert the card into an SD card reader, then connect the reader to your computer.
+- Run the file named **Win32DiskImager.exe** (in Windows Vista and higher, you may need to right-click this file and choose "Run as administrator").
+- If the micro SD card (Device) you are using is not found automatically, then click on the drop down box on the right and select the micro SD card letter you just plugged in (e.g. [H:]).
+- Be careful to select the correct drive; if you get the wrong one, you can destroy your data on your computer’s hard disk!
+- In the Image File box, choose the `.img` file that you downloaded and click "Write". _Note: if a warning message appears, click YES._
+- Your microSD card is ready to be used.
 
-</details>
+_Instructions adapted from [udoo](https://www.udoo.org/docs-neo/Getting_Started/Create_a_bootable_MicroSD_card_for_UDOO_Neo.html)_
 
-<details><summary><b>macOS</b></summary>
+#### macOS
 
-> For macOS users, we recommend [Etcher](https://etcher.io/). Otherwise, refer to the Linux instructions to format your microSD card using the command line.
+For macOS users, we recommend [Etcher](https://etcher.io/). Otherwise, refer to the Linux instructions to format your microSD card using the command line.
 
-</details>
+#### Linux
 
-<details><summary><b>Linux</b></summary>
-  
-> 1.  Unzip the `ev3-source.img.zip` downloaded earlier to get `ev3-source.img`.
-> 
->     ```
->     $ unzip ev3-source.img.zip
->     Archive:  ev3-source.img.zip
->       inflating: ev3-source.img
->     ```
-> 
-> 1.  Make sure that you SD card is **unplugged**. Then run `df`. You should see something like this:
-> 
->     ```
->     $ df -h
->     Filesystem      Size  Used Avail Use% Mounted on
->     /dev/sda1       119G   79G   34G  70% /
->     none            4.0K     0  4.0K   0% /sys/fs/cgroup
->     udev            7.8G   12K  7.8G   1% /dev
->     tmpfs           1.6G  1.1M  1.6G   1% /run
->     none            5.0M     0  5.0M   0% /run/lock
->     none            7.9G  1.5M  7.9G   1% /run/shm
->     none            100M  3.7M   97M   4% /run/user
->     ```
-> 
-> 1.  Now insert your SD card and run `df` again. See the new entry (`/dev/sdb1`)? That is your SD card. `sdb` is the actual device name and `1` is the partition number. Your actual device may be named something different.
-> 
->     ```
->     $ df -h
->     Filesystem      Size  Used Avail Use% Mounted on
->     /dev/sda1       119G   79G   34G  70% /
->     none            4.0K     0  4.0K   0% /sys/fs/cgroup
->     udev            7.8G   12K  7.8G   1% /dev
->     tmpfs           1.6G  1.1M  1.6G   1% /run
->     none            5.0M     0  5.0M   0% /run/lock
->     none            7.9G  1.5M  7.9G   1% /run/shm
->     none            100M  3.7M   97M   4% /run/user
->     /dev/sdb1       2.0G  0.0G  2.0G   0% /media/user/LABEL
->     ```
-> 
-> 1.  Unmount your SD card. If it has more than one partition, you will need to do this for each partition.
-> 
->     ```
->     $ sudo umount /dev/sdb1
->     ```
-> 
-> 1.  This is the dangerous part. If you pick the wrong device, you could wipe out your hard drive, so BE CAREFUL!! When specifying the device, don't include the partition number.
-> 
->     In this example we downloaded the compressed disk image file to `~/Downloads/` and our SD card is `/dev/sdb`. Adjust these values as needed. This will take a while.
-> 
->     ```
->     $ sudo dd if=~/Downloads/ev3-source.img of=/dev/sdb bs=4M \
->           oflag=direct status=progress
->     [sudo] password for user:
->     ```
-> 
-> 1.  When copying the image file has completed, run
-> 
->     ```
->     $ sync
->     ```
-> 
->     to make sure any cached disk writes have completed. Once `sync` is finished, it is safe to remove the SD card.
-> 
-> Adapted from [the ev3dev website](https://www.ev3dev.org/docs/tutorials/writing-sd-card-image-linux-command-line/).
+1.  Unzip the `ev3-source.img.zip` downloaded earlier to get `ev3-source.img`.
 
-</details>
+    ```
+    $ unzip ev3-source.img.zip
+    Archive:  ev3-source.img.zip
+      inflating: ev3-source.img
+    ```
+
+1.  Make sure that you SD card is **unplugged**. Then run `df`. You should see something like this:
+
+    ```
+    $ df -h
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/sda1       119G   79G   34G  70% /
+    none            4.0K     0  4.0K   0% /sys/fs/cgroup
+    udev            7.8G   12K  7.8G   1% /dev
+    tmpfs           1.6G  1.1M  1.6G   1% /run
+    none            5.0M     0  5.0M   0% /run/lock
+    none            7.9G  1.5M  7.9G   1% /run/shm
+    none            100M  3.7M   97M   4% /run/user
+    ```
+
+1.  Now insert your SD card and run `df` again. See the new entry (`/dev/sdb1`)? That is your SD card. `sdb` is the actual device name and `1` is the partition number. Your actual device may be named something different.
+
+    ```
+    $ df -h
+    Filesystem      Size  Used Avail Use% Mounted on
+    /dev/sda1       119G   79G   34G  70% /
+    none            4.0K     0  4.0K   0% /sys/fs/cgroup
+    udev            7.8G   12K  7.8G   1% /dev
+    tmpfs           1.6G  1.1M  1.6G   1% /run
+    none            5.0M     0  5.0M   0% /run/lock
+    none            7.9G  1.5M  7.9G   1% /run/shm
+    none            100M  3.7M   97M   4% /run/user
+    /dev/sdb1       2.0G  0.0G  2.0G   0% /media/user/LABEL
+    ```
+
+1.  Unmount your SD card. If it has more than one partition, you will need to do this for each partition.
+
+    ```
+    $ sudo umount /dev/sdb1
+    ```
+
+1.  This is the dangerous part. If you pick the wrong device, you could wipe out your hard drive, so BE CAREFUL!! When specifying the device, don't include the partition number.
+
+    In this example we downloaded the compressed disk image file to `~/Downloads/` and our SD card is `/dev/sdb`. Adjust these values as needed. This will take a while.
+
+    ```
+    $ sudo dd if=~/Downloads/ev3-source.img of=/dev/sdb bs=4M \
+          oflag=direct status=progress
+    [sudo] password for user:
+    ```
+
+1.  When copying the image file has completed, run
+
+    ```
+    $ sync
+    ```
+
+    to make sure any cached disk writes have completed. Once `sync` is finished, it is safe to remove the SD card.
+
+Adapted from [the ev3dev website](https://www.ev3dev.org/docs/tutorials/writing-sd-card-image-linux-command-line/).
 
 [latest-img]: https://github.com/source-academy/ev3-source/releases/download/sling-v0.0.4/ev3-source-sling-v0.0.4.img.zip
 [ev3-docs]: https://docs.sourceacademy.org/EV3/
