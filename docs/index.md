@@ -13,33 +13,35 @@ Welcome to the world of LEGO Mindstorms EV3! Work together with your teammates t
 
 ## 1. Environment setup
 
-### Hardware setup
+### 1.1 Background
+
+#### Hardware setup
 
 Instructions for a default robot design are included in the manual, which can be found in the robot kit. Try that out if you don't know where to start. You are, however, encouraged to come up with your own design!
 
 For the mission, it must be a robot that your Studio has built. Sharing of the same robot for grading, no matter using the same program or different programs, is strictly **NOT** allowed.
 
-### Installing the ev3dev image
+#### Software setup
+
+The environment that we have installed in the microSD card is a Linux distribution from a project called [ev3dev](http://www.ev3dev.org/). You can find out more about it from [the official website](http://www.ev3dev.org/). When you press "Run" in the Source Academy, your programs will be compiled to the Sinter Virtual Machine Language (SVML) by the Source Academy, the SVML code will be sent to the robot through the internet, and the robot then runs the SVML code on the [Sinter virtual machine](https://github.com/source-academy/sinter). (Please review Brief B5 to understand this process.)
+
+### 1.2 Installing the ev3dev image
 
 Download the [Source Academy's customised ev3dev image from here][latest-img]. Then, use an image burner of your choice to install the image onto the microSD card issued. You will require a microSD card reader for this. The instructions for each operating system are as follows:
 
-#### Cross-platform
+**Windows, macOS, Linux**
 
 Follow [this section &#40;"Flash the SD card"&#41; on the ev3dev site](https://www.ev3dev.org/docs/getting-started/#step-2-flash-the-sd-card). **Note: download the [customised EV3-Source image][latest-img], not the ev3dev release image.**
 
-Explorer/Finder may say that it is unable to read the card, or the card needs to be formatted. That is normal; just dismiss the message. Etcher will be able to flash the card.
+File Explorer (Windows)/Finder (macOS) may say that it is unable to read the card, or the card needs to be formatted. That is normal; just dismiss the message. Etcher will be able to flash the card.
 
-If this does not work, try our [alternative instructions at the end of the page](#appendix-alternative-flashing-instructions).
-
-### Software setup
-
-The environment that we have installed in the microSD card is a Linux distribution from a project called [ev3dev](http://www.ev3dev.org/). You can find out more about it from [the official website](http://www.ev3dev.org/). When you press "Run" in the Source Academy, your programs will be compiled to the Sinter Virtual Machine Language (SVML) by the Source Academy, the SVML code will be sent to the robot through the internet, and the robot then runs the SVML code on the [Sinter virtual machine](https://github.com/source-academy/sinter). (Please review Brief B5 to understand this process.)
+If this does not work, try our [alternative instructions at the end of the page](#alternative-flashing-instructions).
 
 This is what you should see when the EV3 has booted up with the microSD card inserted.
 
 ![ev3-boot](screen.png)
 
-Tip: the number you see at the top-right of the screen is the battery voltage in volts. A fully charged battery should read somewhere around 8.3 V, and below 6 V, your battery will be running flat soon.
+_Tip: the number you see at the top-right of the screen is the battery voltage in volts. A fully charged battery should read somewhere around 8.3 V, and below 6 V, your battery will be running flat soon._
 
 ## 2. Writing and testing your solutions
 
@@ -49,9 +51,17 @@ Our customised EV3-Source image is integrated with the Source Academy. You can s
 
 ### How to connect
 
-The EV3 needs to connect to the Source Academy via your computer. It can connect to your computer over USB or Bluetooth. (The benefit of Bluetooth is, of course, that it is wireless, but it may be slightly less reliable.)
+<details><summary><b>Alternative connection methods</b></summary>
 
-To connect your EV3 to the Internet via Bluetooth, follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/). To connect your EV3 via the USB wire provided, you can follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/).
+The EV3 can also connect to your computer/phone over USB or Bluetooth. (The benefit of Bluetooth is, of course, that it is wireless, but it may be slightly less reliable.)
+
+To connect your EV3 to the Internet via Bluetooth, follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/).
+
+_Note: Bluetooth connection sharing is reported to no longer work with Windows 10. It remains working for macOS and Android. If you cannot use Bluetooth connection sharing, please use an alternative method._
+
+To connect your EV3 via the USB wire provided, you can follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/).
+
+</details>
 
 Once you have connected successfully, you should see your EV3's local IP address on the top left-hand corner of the EV3's screen.
 
@@ -80,20 +90,19 @@ This integration is still a work-in-progress, so there are definitely bugs. Plea
 There are some deviations between the full Source §3 and the Source §3 on the device:
 
 - These functions are not (yet) supported:
-  - list_to_string
-  - parse_int
-  - get_time
-  - prompt
-  - stringify
+  - `list_to_string`
+  - `parse_int`
+  - `get_time`
+  - `prompt`
+  - `stringify`
 - Numbers are single-precision floating points. This means that `16777216 + 1 === 16777216`.
 
 Avoid using large arrays. Note that sparse arrays are not supported, that is, assigning to a large index in the array (e.g. `a[500]`) will create an array of 501 elements, the first 500 of which are `undefined`, and consume that much space.
 
 #### Tips
 
-Multiple users can connect to the same device at the same time. If one user clicks "Run", all users will see the device run and the device's output.
-
-You can use this feature with the collaborative editing feature so that all members of your Studio can work on the program together. You can also use it with the Google Drive integration to save different programs that you write.
+- Multiple users can connect to the same device at the same time. If one user clicks "Run", all users will see the device run and the device's output.
+- You can use this feature with the collaborative editing feature so that all members of your Studio can work on the program together. You can also use it with the Google Drive integration to save different programs that you write.
 
 #### Troubleshooting
 
@@ -134,7 +143,9 @@ The language for this mission is Source §3 (including the list, streams and arr
 
 Part of the fun is learning how to troubleshoot. If you have difficulties, start by Googling your problems. For debugging, you can use the `display` function in your programs. The output of `display` will then appear on your screen.
 
-## Appendix: SSHing to the EV3
+## Appendix
+
+### SSHing to the EV3
 
 To SSH to the EV3, run
 
@@ -148,7 +159,7 @@ Enter your password when prompted. The default password is `maker`.
 
 If you are on Linux or macOS, you should have an SSH client already installed. Windows 10 includes an SSH client from version 1803 onwards. On older versions of Windows, you can use other SSH clients like [PuTTY](http://www.putty.org/). The username is `robot`, and the hostname is the IP address shown on the top-left of the EV3 screen.
 
-## Appendix: Alternative flashing instructions
+### Alternative Flashing Instructions
 
 <details><summary><b>Windows</b></summary>
 
