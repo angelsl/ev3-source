@@ -11,5 +11,7 @@ COPY bootstrap.sh start-sling.sh sling.service panel.service show-secret.sh show
 RUN ["bash", "-c", "chmod 755 /usr/local/bin/bootstrap.sh && exec /usr/local/bin/bootstrap.sh"]
 
 # Copy user-executable binaries
-COPY executables/show_qrcode executables/nus_login /home/robot/
-RUN ["bash", "-c", "chmod 755 /home/robot/show_qrcode /home/robot/nus_login"]
+ARG show_qrcode="Show QR Code"
+ARG nus_login="Login to NUS_STU"
+COPY executables/${show_qrcode} executables/${nus_login} /home/robot/
+RUN ["bash", "-c", "chmod 755 \"/home/robot/${show_qrcode}\" \"/home/robot/${nus_login}\""]
