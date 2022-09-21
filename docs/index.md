@@ -127,12 +127,12 @@ Everyone on the team will have to do the following steps to link their team's EV
 On a computer/mobile device (the latter is preferred because of a better camera):
 
 1. Go to the [Source Academy Playground](https://sourceacademy.nus.edu.sg/playground) and select the "Remote Execution" tab (the one with the satellite icon)
-   ![](sa1.png)
+   ![](images/sa1.png)
 
 1. Click on "Add new device..."
 
 1. Enter a name for you to identify your device (the name is up to you, and need not be the same across team members)
-   ![](sa2.png)
+   ![](images/sa2.png)
 
 1. Click the button on the right side of the "Secret" field to open a QR code scanner. You may need to grant Source Academy access to your camera in the browser
 
@@ -151,7 +151,7 @@ After 10 seconds, the QR code will automatically disappear. If you need more tim
 >
 > Using a phone or computer, open `http://172.31.119.87/` in your browser, where `172.31.119.87` is the EV3's local IP address, shown on the top left-hand corner of the EV3's screen. You should get a page similar to below:
 >
-> ![](panel.png)
+> ![](images/panel.png)
 >
 > Next, choose one of the following:
 >
@@ -165,7 +165,7 @@ After 10 seconds, the QR code will automatically disappear. If you need more tim
 
 Click on the new entry that is created. Once you see "Connected to _<your_device_name>_.", you should be able to run programs on the EV3!
 
-![](sa3.png)
+![](images/sa3.png)
 
 If you are stuck on "Connecting..." for a while, try selecting the device again to attempt a re-connection.
 
