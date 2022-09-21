@@ -48,7 +48,7 @@ Once the image has been flashed onto the microSD card, insert it into the EV3, b
 
    This is what you should see when the EV3 has booted up with the microSD card inserted.
 
-   ![ev3-boot](screen.png)
+   ![](images/ev3/file_browser.png)
 
    _Tip: the number you see at the top-right of the screen is the battery voltage in volts. A fully charged battery should read somewhere around 8.3 V, and below 6 V, your battery will be running flat soon._
 
@@ -66,16 +66,31 @@ The preferred method of connecting the EV3 to the internet is via WiFi. This can
 
 Only one person per team needs to do this:
 
-1. From the main menu, select 'File Browser'
-1. Select 'nus_login'
-1. Key in your NUSNET user ID and press 'Ok'
-   Select the text field to open an on-screen keyboard, and use the up/down/left/right buttons to navigate the keys, and the center button to select a character.
-1. Key in your NUSNET password and press 'Ok'
-1. Confirm that your login details are correct and press 'Quit' to return to the file browser. If you have keyed in your details incorrectly, simply re-run the program to update the EV3 with the correct credentials.
-1. Go back to the main menu (use the button in the top-left corner to go back) and select 'Wireless and Networks'
-1. Select 'Wi-Fi' and ensure it is powered on
+1. From the main menu, select "File Browser"
+   ![](images/ev3/file_browser.png)
 
-That's it! If your credentials are correct, the EV3 should connect to NUS_STU within a few seconds. If the EV3 does not detect the WiFi network, you may want to select 'Start Scan' **once** to force a refresh.
+1. Select "Login to NUS_STU"
+   ![](images/ev3/files.png)
+
+1. Key in your NUSNET user ID and press "Ok"
+   ![](images/ev3/nusnet_id_1.png)
+   Select the text field to open an on-screen keyboard, and use the up/down/left/right buttons to navigate the keys, and the center button to select a character. The top bar switches between lowercase, uppercase, numbers and symbols.
+   ![](images/ev3/nusnet_id_2.png)
+   ![](images/ev3/nusnet_id_3.png)
+
+1. Key in your NUSNET password and press "Ok"
+   ![](images/ev3/nusnet_pwd.png)
+
+1. Confirm that your login details are correct and press "Quit" to return to the file browser. If you have keyed in your details incorrectly, simply re-run the program to update the EV3 with the correct credentials.
+   ![](images/ev3/nusnet_cfm.png)
+
+1. Go back to the main menu (use the button in the top-left corner to go back) and select "Wireless and Networks"
+   ![](images/ev3/wireless.png)
+
+1. Select "Wi-Fi" and ensure it is powered on
+   ![](images/ev3/wifi.png)
+
+That's it! If your credentials are correct, the EV3 should connect to NUS_STU within a few seconds. If the EV3 does not detect the WiFi network, you may want to select "Start Scan" **once** to force a refresh.
 
 #### Connecting to a personal hotspot
 
@@ -85,9 +100,11 @@ If you are not within range of NUS_STU, or if you prefer to use your own network
 1. Select 'Wi-Fi' and ensure it is powered on
 1. Select your network and connect to it. If your network is secured with a password, the EV3 will prompt you for one when you press 'Connect'
 
-If connecting to WiFi does not work for some reason, please ask for help, but you may also try the following:
+**Note:** NUS Wi-Fi may be having connection issues from time to time. If you see a "Status: Failed" message in the Wi-Fi menu entry for NUS_STU, try toggling the Wi-Fi off and on again. It may take multiple attempts at this. Alternatively, you may use a personal hotspot or other connection methods.
 
 > **Alternative connection methods**
+>
+> If connecting to WiFi does not work for some reason, please ask for help, but you may also try the following:
 >
 > The EV3 can also connect to your computer/phone over USB or Bluetooth. (The benefit of Bluetooth is, of course, that it is wireless, but it may be slightly less reliable.)
 >
@@ -97,46 +114,52 @@ If connecting to WiFi does not work for some reason, please ask for help, but yo
 >
 > To connect your EV3 via the USB wire provided, you can follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/).
 
-Once you have connected successfully, you should see your EV3's local IP address on the top left-hand corner of the EV3's screen.
+Once you have connected successfully, you should see your EV3's local IP address on the top left-hand corner of the EV3's screen. In this case, it's `192.168.139.113`. This means you are connected.
 
-![ev3 screen](ip.png)
+![](images/ev3/ip.png)
 
 ### 2.3 Pairing the EV3 to Source Academy
 
 Everyone on the team will have to do the following steps to link their team's EV3 with their Source Academy account. There are two methods to pair the EV3, feel free to choose whichever method is most convenient for you.
 
-#### Method 1: Scanning a QR code
+#### Method: Scanning a QR code
 
 On a computer/mobile device (the latter is preferred because of a better camera):
 
 1. Go to the [Source Academy Playground](https://sourceacademy.nus.edu.sg/playground) and select the "Remote Execution" tab (the one with the satellite icon)
+   ![](sa1.png)
+
 1. Click on "Add new device..."
+
 1. Enter a name for you to identify your device (the name is up to you, and need not be the same across team members)
+   ![](sa2.png)
+
 1. Click the button on the right side of the "Secret" field to open a QR code scanner. You may need to grant Source Academy access to your camera in the browser
+
 1. You are now ready to scan the QR code on the EV3!
 
 Then, on the EV3 device:
 
-1. Go to the file browser and select 'show_qrcode'
+1. Go to the file browser and select "Show QR Code". A QR code will be shown on the screen (the following is only a sample, yours will be different):
+   ![](images/ev3/qr.png)
+
 1. Place the EV3 such that the QR code is visible in the computer/phone's camera view in order to scan the QR code
 
-On your computer/phone, click the add button. You have succesfully linked the EV3 to your account!
+After 10 seconds, the QR code will automatically disappear. If you need more time, simply select "Show QR Code" again. After scanning the code on your computer/phone, click the add button. You have succesfully linked the EV3 to your account!
 
-#### Method 2: Accessing the EV3 from a browser
-
-This method is kept as a backup instead you are unable to scan the QR code on the EV3 for one reason or another.
-
-> Using a phone or computer, open `http://10.42.0.222/` in your browser, where `10.42.0.222` is the EV3's local IP address, shown on the top left-hand corner of the EV3's screen.
+> #### Alternative Method: Accessing the EV3 from a browser
+>
+> Using a phone or computer, open `http://172.31.119.87/` in your browser, where `172.31.119.87` is the EV3's local IP address, shown on the top left-hand corner of the EV3's screen. You should get a page similar to below:
 >
 > ![](panel.png)
 >
-> Copy the device secret, then go to the Source Academy Playground and click on the rightmost side content tab (Remote Execution).
+> Next, choose one of the following:
 >
-> ![](sa1.png)
+> **Method 1 (fastest):** If you're already logged in to Source Academy, click the QR code at the page. This will automatically pop up a dialog for you to pair the device on Source Academy. Give the device a name and add it to your account using similar steps as above. If you are not logged in, we strongly recommend you to log in and use this method.
 >
-> Add a new device, give it a name and paste in the secret.
+> **Method 2 (adding manually):** Copy the device secret at the top of the page, then go to the Source Academy Playground and follow similar steps as above to add the device to your account, manually pasting in the secret.
 >
-> ![](sa2.png)
+> **Method 3 (last resort):** Scan the QR code on the webpage using another device and the [abovementioned method](#method-scanning-a-qr-code).
 
 ---
 
