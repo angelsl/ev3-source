@@ -67,27 +67,36 @@ The preferred method of connecting the EV3 to the internet is via WiFi. This can
 Only one person per team needs to do this:
 
 1. From the main menu, select "File Browser"
+
    ![](images/ev3/file_browser.png)
 
 1. Select "Login to NUS_STU"
+
    ![](images/ev3/files.png)
 
 1. Key in your NUSNET user ID and press "Ok"
+
    ![](images/ev3/nusnet_id_1.png)
+
    Select the text field to open an on-screen keyboard, and use the up/down/left/right buttons to navigate the keys, and the center button to select a character. The top bar switches between lowercase, uppercase, numbers and symbols.
+
    ![](images/ev3/nusnet_id_2.png)
    ![](images/ev3/nusnet_id_3.png)
 
 1. Key in your NUSNET password and press "Ok"
+
    ![](images/ev3/nusnet_pwd.png)
 
 1. Confirm that your login details are correct and press "Quit" to return to the file browser. If you have keyed in your details incorrectly, simply re-run the program to update the EV3 with the correct credentials.
+
    ![](images/ev3/nusnet_cfm.png)
 
 1. Go back to the main menu (use the button in the top-left corner to go back) and select "Wireless and Networks"
+
    ![](images/ev3/wireless.png)
 
 1. Select "Wi-Fi" and ensure it is powered on
+
    ![](images/ev3/wifi.png)
 
 That's it! If your credentials are correct, the EV3 should connect to NUS_STU within a few seconds. If the EV3 does not detect the WiFi network, you may want to select "Start Scan" **once** to force a refresh.
@@ -127,11 +136,13 @@ Everyone on the team will have to do the following steps to link their team's EV
 On a computer/mobile device (the latter is preferred because of a better camera):
 
 1. Go to the [Source Academy Playground](https://sourceacademy.nus.edu.sg/playground) and select the "Remote Execution" tab (the one with the satellite icon)
+
    ![](images/sa1.png)
 
 1. Click on "Add new device..."
 
 1. Enter a name for you to identify your device (the name is up to you, and need not be the same across team members)
+
    ![](images/sa2.png)
 
 1. Click the button on the right side of the "Secret" field to open a QR code scanner. You may need to grant Source Academy access to your camera in the browser
@@ -141,6 +152,7 @@ On a computer/mobile device (the latter is preferred because of a better camera)
 Then, on the EV3 device:
 
 1. Go to the file browser and select "Show QR Code". A QR code will be shown on the screen (the following is only a sample, yours will be different):
+
    ![](images/ev3/qr.png)
 
 1. Place the EV3 such that the QR code is visible in the computer/phone's camera view in order to scan the QR code
