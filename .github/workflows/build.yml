@@ -4,55 +4,63 @@ on:
   workflow_dispatch:
   push:
     tags:
-      - 'sling-*'
+      - "sling-*"
+      - "dev-*"
+      - "release-*"
 
 jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
-      with:
-        submodules: recursive
-    - uses: satackey/action-docker-layer-caching@v0.0.8
-    - name: install brickstrap
-      run: |
-        sudo apt-get update
-        sudo apt-get install --yes --no-install-recommends libguestfs-tools qemu-user-static binfmt-support
-        curl -LO https://raw.githubusercontent.com/ev3dev/brickstrap/master/src/brickstrap.sh
-    - name: build sling and sinter
-      run: ./build_sling.sh
-    - name: check the outputs
-      run: |
-        file build-ev3/sling build-ev3/sinter_host
-    - name: make vmlinuz readable
-      run: sudo chmod 755 /boot/vmlinuz*
-    - name: build image
-      run: ./build_image.sh
-    - uses: actions/upload-artifact@v2
-      if: ${{ github.event_name == 'workflow_dispatch' }}
-      with:
-        name: image
-        path: ev3-source.img.zip
-        if-no-files-found: error
-    - id: create_release
-      uses: actions/create-release@v1
-      if: ${{ github.event_name == 'push' }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref }}
-        release_name: ${{ github.ref }}
-        body: ""
-        draft: true
-    - id: tag_name
-      if: ${{ github.event_name == 'push' }}
-      run: echo ::set-output name=TAG_NAME::${GITHUB_REF#refs/tags/}
-    - uses: actions/upload-release-asset@v1
-      if: ${{ github.event_name == 'push' }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./ev3-source.img.zip
-        asset_name: ev3-source-${{ steps.tag_name.outputs.TAG_NAME }}.img.zip
-        asset_content_type: application/zip
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - uses: satackey/action-docker-layer-caching@v0.0.8
+      - name: install brickstrap
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends libguestfs-tools qemu-user-static binfmt-support
+          curl -LO https://raw.githubusercontent.com/ev3dev/brickstrap/master/src/brickstrap.sh
+      - name: build sling and sinter
+        run: ./build_sling.sh
+      - name: build qrcode generator
+        run: ./build_qrcode.sh
+      - name: build nus login program
+        run: ./build_prompt.sh
+      - name: build uuidtob62
+        run: ./build_uuidtob62.sh
+      - name: check the outputs
+        run: |
+          file build-ev3/sling build-ev3/sinter_host file build-ev3/executables/show_qrcode build-ev3/executables/nus_login build-ev3/executables/uuidtob62
+      - name: make vmlinuz readable
+        run: sudo chmod 755 /boot/vmlinuz*
+      - name: build image
+        run: ./build_image.sh
+      - uses: actions/upload-artifact@v2
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        with:
+          name: image
+          path: ev3-source.img.zip
+          if-no-files-found: error
+      - id: create_release
+        uses: actions/create-release@v1
+        if: ${{ github.event_name == 'push' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body: ""
+          draft: true
+      - id: tag_name
+        if: ${{ github.event_name == 'push' }}
+        run: echo ::set-output name=TAG_NAME::${GITHUB_REF#refs/tags/}
+      - uses: actions/upload-release-asset@v1
+        if: ${{ github.event_name == 'push' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./ev3-source.img.zip
+          asset_name: ev3-source-${{ steps.tag_name.outputs.TAG_NAME }}.img.zip
+          asset_content_type: application/zip

@@ -1,3 +1,12 @@
 [submodule "sling"]
 	path = sling
 	url = https://github.com/source-academy/sling.git
+[submodule "go_ev3_qrcode_generator"]
+	path = go_ev3_qrcode_generator
+	url = https://github.com/RichDom2185/go_ev3_qrcode_generator
+[submodule "uuidtob62"]
+	path = uuidtob62
+	url = https://github.com/RichDom2185/uuidtob62.git
+[submodule "ev3dev-peap-gui-login"]
+	path = ev3dev-peap-gui-login
+	url = https://github.com/RichDom2185/ev3dev-peap-gui-login.git

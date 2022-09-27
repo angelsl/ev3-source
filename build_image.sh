@@ -7,6 +7,12 @@ cd "$SCRIPT_DIR"
 
 cd image
 cp ../build-ev3/{sling,sinter_host} .
+mkdir -p executables
+cp ../build-ev3/executables/uuidtob62 executables
+
+# Copy and rename our user executables
+cp ../build-ev3/executables/show_qrcode executables/'Show QR Code'
+cp ../build-ev3/executables/nus_login executables/'Login to NUS_STU'
 
 docker build -t sourceacademy/ev3-source .
 
