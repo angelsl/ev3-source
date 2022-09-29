@@ -342,5 +342,5 @@ For macOS users, we recommend [Etcher](https://etcher.io/). Otherwise, refer to 
 
 Adapted from [the ev3dev website](https://www.ev3dev.org/docs/tutorials/writing-sd-card-image-linux-command-line/).
 
-[latest-img]: https://github.com/source-academy/ev3-source/releases/download/sling-v0.0.4/ev3-source-sling-v0.0.4.img.zip
+[latest-img]: https://github.com/source-academy/ev3-source/releases/download/release-v0.1.0/ev3-source-release-v0.1.0.img.zip
 [ev3-docs]: https://docs.sourceacademy.org/EV3/
