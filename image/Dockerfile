@@ -15,3 +15,8 @@ ARG show_qrcode="Show QR Code"
 ARG nus_login="Login to NUS_STU"
 COPY executables/${show_qrcode} executables/${nus_login} /home/robot/
 RUN ["bash", "-c", "chmod 755 \"/home/robot/${show_qrcode}\" \"/home/robot/${nus_login}\""]
+
+# Add script to kill a running Source Program
+ARG kill_source="Kill Source Program"
+COPY executables/${kill_source} /home/robot/
+RUN ["bash", "-c", "chmod 755 \"/home/robot/${kill_source}\""]
