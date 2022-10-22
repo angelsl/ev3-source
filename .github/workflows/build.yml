@@ -29,10 +29,13 @@ jobs:
         run: ./build_prompt.sh
       - name: Build uuidtob62 CLI tool
         run: ./build_uuidtob62.sh
+      - name: Build RTL8821CU Wi-Fi driver
+        run: ./build_driver.sh
       - name: Check the outputs
         run: |
           file build-ev3/sling build-ev3/sinter_host \
-          file build-ev3/executables/show_qrcode build-ev3/executables/nus_login build-ev3/executables/uuidtob62
+          file build-ev3/executables/show_qrcode build-ev3/executables/nus_login build-ev3/executables/uuidtob62 \
+          file image/rtl8821cu-driver/8821cu.ko image/rtl8821cu-driver/8821cu.conf
       - name: make vmlinuz readable
         run: sudo chmod 755 /boot/vmlinuz*
       - name: Build EV3-Source image
