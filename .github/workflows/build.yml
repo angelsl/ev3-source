@@ -21,20 +21,24 @@ jobs:
           sudo apt-get update
           sudo apt-get install --yes --no-install-recommends libguestfs-tools qemu-user-static binfmt-support
           curl -LO https://raw.githubusercontent.com/ev3dev/brickstrap/master/src/brickstrap.sh
-      - name: build sling and sinter
+      - name: Build sling and sinter
         run: ./build_sling.sh
-      - name: build qrcode generator
+      - name: Build QR code generator
         run: ./build_qrcode.sh
-      - name: build nus login program
+      - name: Build prompt for NUS_STU login
         run: ./build_prompt.sh
-      - name: build uuidtob62
+      - name: Build uuidtob62 CLI tool
         run: ./build_uuidtob62.sh
-      - name: check the outputs
+      - name: Build RTL8821CU Wi-Fi driver
+        run: ./build_driver.sh
+      - name: Check the outputs
         run: |
-          file build-ev3/sling build-ev3/sinter_host file build-ev3/executables/show_qrcode build-ev3/executables/nus_login build-ev3/executables/uuidtob62
+          file build-ev3/sling build-ev3/sinter_host \
+          file build-ev3/executables/show_qrcode build-ev3/executables/nus_login build-ev3/executables/uuidtob62 \
+          file image/rtl8821cu-driver/8821cu.ko image/rtl8821cu-driver/8821cu.conf
       - name: make vmlinuz readable
         run: sudo chmod 755 /boot/vmlinuz*
-      - name: build image
+      - name: Build EV3-Source image
         run: ./build_image.sh
       - uses: actions/upload-artifact@v2
         if: ${{ github.event_name == 'workflow_dispatch' }}
