@@ -10,3 +10,6 @@
 [submodule "ev3dev-peap-gui-login"]
 	path = ev3dev-peap-gui-login
 	url = https://github.com/RichDom2185/ev3dev-peap-gui-login.git
+[submodule "ev3dev-service-control"]
+	path = ev3dev-service-control
+	url = https://github.com/RichDom2185/ev3dev-service-control.git
