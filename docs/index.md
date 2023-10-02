@@ -60,9 +60,9 @@ Our customised EV3-Source image is integrated with the Source Academy. You can s
 
 ### 2.2 Connecting the EV3 to WiFi
 
-The preferred method of connecting the EV3 to the internet is via WiFi. This can be done in the one of the following ways:
+The preferred method of connecting the EV3 to the internet is via WiFi. This can be done in the ~~one of~~ the following way~~s~~:
 
-#### Connecting to NUS_STU
+<!-- #### Connecting to NUS_STU
 
 Only one person per team needs to do this:
 
@@ -99,17 +99,17 @@ Only one person per team needs to do this:
 
    ![](images/ev3/wifi.png)
 
-That's it! If your credentials are correct, the EV3 should connect to NUS_STU within a few seconds. If the EV3 does not detect the WiFi network, you may want to select "Start Scan" **once** to force a refresh.
+That's it! If your credentials are correct, the EV3 should connect to NUS_STU within a few seconds. If the EV3 does not detect the WiFi network, you may want to select "Start Scan" **once** to force a refresh. -->
 
 #### Connecting to a personal hotspot
 
-If you are not within range of NUS_STU, or if you prefer to use your own network, you can do the following instead:
+<!-- If you are not within range of NUS_STU, or if you prefer to use your own network, you can do the following instead: -->
 
 1. From the main menu, select 'Wireless and Networks'
 1. Select 'Wi-Fi' and ensure it is powered on
 1. Select your network and connect to it. If your network is secured with a password, the EV3 will prompt you for one when you press 'Connect'
 
-**Note:** NUS Wi-Fi may be having connection issues from time to time. If you see a "Status: Failed" message in the Wi-Fi menu entry for NUS_STU, try toggling the Wi-Fi off and on again. It may take multiple attempts at this. Alternatively, you may use a personal hotspot or other connection methods.
+<!-- **Note:** NUS Wi-Fi may be having connection issues from time to time. If you see a "Status: Failed" message in the Wi-Fi menu entry for NUS_STU, try toggling the Wi-Fi off and on again. It may take multiple attempts at this. Alternatively, you may use a personal hotspot or other connection methods. -->
 
 > **Alternative connection methods**
 >

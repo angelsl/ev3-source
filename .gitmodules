@@ -7,6 +7,3 @@
 [submodule "uuidtob62"]
 	path = uuidtob62
 	url = https://github.com/RichDom2185/uuidtob62.git
-[submodule "ev3dev-peap-gui-login"]
-	path = ev3dev-peap-gui-login
-	url = https://github.com/RichDom2185/ev3dev-peap-gui-login.git
