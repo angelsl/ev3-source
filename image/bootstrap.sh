@@ -38,9 +38,10 @@ systemctl disable uuidd.socket
 rm uuid-runtime_2.29.2-1+deb9u1_armel.deb busybox-static_1.22.0-19+b3_armel.deb
 
 # Set up first-boot items:
-## Install RTL8811CU drivers
-## Disable SSH by default
-## Disable Webserver by default
+# - Install RTL8811CU drivers
+# - Disable SSH
+# - Disable Webserver
+# - Reboot
 sed -e '/^\s*;;$/{i \
         depmod\
         systemctl disable ssh\
