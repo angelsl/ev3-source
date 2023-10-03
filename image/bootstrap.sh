@@ -30,8 +30,8 @@ chown robot:robot /var/lib/sling
 
 # install uuidgen
 cd /dev/shm
-curl -LO http://cdn-fastly.deb.debian.org/debian/pool/main/u/util-linux/uuid-runtime_2.29.2-1+deb9u1_armel.deb
-curl -LO http://cdn-fastly.deb.debian.org/debian/pool/main/b/busybox/busybox-static_1.22.0-19+b3_armel.deb
+curl -LO http://archive.debian.org/debian/pool/main/u/util-linux/uuid-runtime_2.29.2-1+deb9u1_armel.deb
+curl -LO http://archive.debian.org/debian/pool/main/b/busybox/busybox-static_1.22.0-19+b3_armel.deb
 dpkg -i uuid-runtime_2.29.2-1+deb9u1_armel.deb
 dpkg -i busybox-static_1.22.0-19+b3_armel.deb
 systemctl disable uuidd.socket
