@@ -47,7 +47,7 @@ sed -e '/^\s*;;$/{i \
         depmod\
         systemctl disable ssh\
         echo 0 > /srv/www/cgi-bin/.enable\
-        NEWPASS=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 6) && echo -e "$NEWPASS\n$NEWPASS" | sudo passwd robot
+        NEWPASS=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 6) && echo -e "$NEWPASS\n$NEWPASS" | passwd robot\
         reboot' \
     -e ':a;n;ba}' -i /etc/init.d/firstboot
 
