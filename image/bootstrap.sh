@@ -41,11 +41,13 @@ rm uuid-runtime_2.29.2-1+deb9u1_armel.deb busybox-static_1.22.0-19+b3_armel.deb
 # - Install RTL8811CU drivers
 # - Disable SSH
 # - Disable Webserver
+# - Reset to a random login password
 # - Reboot
 sed -e '/^\s*;;$/{i \
         depmod\
         systemctl disable ssh\
         echo 0 > /srv/www/cgi-bin/.enable\
+        NEWPASS=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 6) && echo -e "$NEWPASS\n$NEWPASS" | sudo passwd robot
         reboot' \
     -e ':a;n;ba}' -i /etc/init.d/firstboot
 
