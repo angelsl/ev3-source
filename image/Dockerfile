@@ -15,6 +15,11 @@ ARG show_qrcode="Show QR Code"
 COPY executables/${show_qrcode} /home/robot/
 RUN ["bash", "-c", "chmod 755 \"/home/robot/${show_qrcode}\""]
 
+# Copy control panel
+ARG service_control="Source Academy Settings"
+COPY executables/${service_control} /home/robot/
+RUN ["bash", "-c", "chmod 755 \"/home/robot/${service_control}\""]
+
 # Add script to kill a running Source Program
 ARG kill_source="Kill Source Program"
 COPY executables/${kill_source} /home/robot/

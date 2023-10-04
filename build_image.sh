@@ -12,6 +12,7 @@ cp ../build-ev3/executables/uuidtob62 executables
 
 # Copy and rename our user executables
 cp ../build-ev3/executables/show_qrcode executables/'Show QR Code'
+cp ../build-ev3/executables/service_control executables/'Source Academy Settings'
 cp kill_source.sh executables/'Kill Source Program'
 
 docker build -t sourceacademy/ev3-source .

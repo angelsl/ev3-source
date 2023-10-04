@@ -6,6 +6,7 @@ If you want to know exactly how the build process works, read the [GitHub workfl
 
 In a nutshell:
 
+- [`build_control_panel.sh`](./build_control_panel.sh): Cross-compiles the `service_control` binary to manage Source-Academy related services and settings directly from the EV3
 - [`build_sling.sh`](./build_sling.sh): Cross-compiles Sling and Sinter for ARM using ev3dev's cross-compilation Docker image `ev3dev/debian-stretch-cross`, with some additional dependencies added in [`Dockerfile.sling`](./Dockerfile.sling)
 - [`build_qrcode.sh`](./build_qrcode.sh): Cross-compiles the `show_qrcode` binary to display the QR code of the device secret on the EV3 screen
 - [`build_uuidtob62.sh`](./build_uuidtob62.sh): Cross-compiles the `uuidtob62` CLI utility to represent the device secret in a more compact format
@@ -27,6 +28,7 @@ To build the image from the source code, make sure you are the the root of the r
 
 ```bash
 wget https://raw.githubusercontent.com/ev3dev/brickstrap/master/src/brickstrap.sh
+./build_control_panel.sh
 ./build_sling.sh
 ./build_qrcode.sh
 ./build_uuidtob62.sh

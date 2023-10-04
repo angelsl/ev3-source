@@ -7,3 +7,6 @@
 [submodule "uuidtob62"]
 	path = uuidtob62
 	url = https://github.com/RichDom2185/uuidtob62.git
+[submodule "ev3dev-service-control"]
+	path = ev3dev-service-control
+	url = https://github.com/RichDom2185/ev3dev-service-control.git

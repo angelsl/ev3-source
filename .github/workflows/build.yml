@@ -25,11 +25,17 @@ jobs:
         run: ./build_sling.sh
       - name: build qrcode generator
         run: ./build_qrcode.sh
+      - name: build control panel
+        run: ./build_control_panel.sh
       - name: build uuidtob62
         run: ./build_uuidtob62.sh
       - name: check the outputs
         run: |
-          file build-ev3/sling build-ev3/sinter_host file build-ev3/executables/show_qrcode build-ev3/executables/uuidtob62
+          file build-ev3/sling \
+               build-ev3/sinter_host \
+               build-ev3/executables/show_qrcode \
+               build-ev3/executables/service_control \
+               build-ev3/executables/uuidtob62
       - name: make vmlinuz readable
         run: sudo chmod 755 /boot/vmlinuz*
       - name: build image
