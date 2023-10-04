@@ -16,7 +16,7 @@ Welcome to the world of LEGO Mindstorms EV3! Work together with your teammates t
 1. toc
 {:toc}
 
-## Setting up your EV3
+## Setting up
 
 ### Background
 
@@ -28,32 +28,45 @@ For the mission, it must be a robot that your Studio has built. Sharing of the s
 
 #### Software setup
 
-The environment that we have installed in the microSD card is a Linux distribution from a project called [ev3dev](http://www.ev3dev.org/). You can find out more about it from [the official website](http://www.ev3dev.org/). When you press "Run" in the Source Academy, your programs will be compiled to the Sinter Virtual Machine Language (SVML) by the Source Academy, the SVML code will be sent to the robot through the internet, and the robot then runs the SVML code on the [Sinter virtual machine](https://github.com/source-academy/sinter). (Please review Brief B5 to understand this process.)
+The environment that we have installed in the microSD card is a customised version of a Linux distribution from a project called [ev3dev](http://www.ev3dev.org/). You can find out more about it from [the official website](http://www.ev3dev.org/).
 
-### Installing the `ev3dev` image
+When you press "Run" in the Source Academy, your programs will be compiled to the Sinter Virtual Machine Language (SVML) by the Source Academy, the SVML code will be sent to the robot through the internet, and the robot then runs the SVML code on the [Sinter virtual machine](https://github.com/source-academy/sinter). (Please review Brief B5 to understand this process.)
 
-Download the [Source Academy's customised ev3dev image from here][latest-img]. Then, use an image burner of your choice to install the image onto the microSD card issued. You will require a microSD card reader for this. The instructions for each operating system are as follows:
+### Installing EV3-Source on your robot
 
-**Windows, macOS, Linux**
+#### Windows, macOS, Linux
 
-Follow [this section &#40;"Flash the SD card"&#41; on the ev3dev site](https://www.ev3dev.org/docs/getting-started/#step-2-flash-the-sd-card). **Note: download the [customised EV3-Source image][latest-img], not the ev3dev release image.**
+1. Download the [Source Academy's customised ev3dev image][latest-img].
 
-File Explorer (Windows)/Finder (macOS) may say that it is unable to read the card, or the card needs to be formatted. That is normal; just dismiss the message. Etcher will be able to flash the card.
+1. Use an image burner (we recommend [Etcher](https://etcher.balena.io/)) to install the image onto the microSD card issued. You will require a microSD card reader for this.
+  
+   You may follow this guide (_"Flash the SD card"_ section) [from the ev3dev site](https://www.ev3dev.org/docs/getting-started/#step-2-flash-the-sd-card) to do so.
 
-If this does not work, try our [alternative instructions at the end of the page](#42-alternative-flashing-instructions).
+   **Note: download the [customised EV3-Source image][latest-img], not the ev3dev release image.**
 
-Once the image has been flashed onto the microSD card, insert it into the EV3, but do not power it on just yet.
+   File Explorer (Windows)/Finder (macOS) may say that it is unable to read the card, or the card needs to be formatted. This is **normal** and can be ignored. Etcher will be able to flash the card.
 
-#### Starting up the EV3
+   If this does not work, try our [alternative instructions at the end of the page](#alternative-flashing-instructions).
 
-1. Plug in the WiFi dongle into the USB port of the EV3
-1. Power on the EV3 by pressing the center button and grab a cup of coffee. The first time powering it up, it might take a while to set up the systems automatically. Wait for the main menu to appear, **do not** do anything and just wait for it to restart automatically. This second time should be much faster, and once this is done, you are ready to proceed to the next step to connect to WiFi.
+1. Once the image has been flashed onto the microSD card, insert it into the EV3, but do not power it on yet.
 
-   This is what you should see when the EV3 has booted up with the microSD card inserted.
+1. Plug in the WiFi dongle into the USB port of the EV3.
+
+### Starting up the EV3
+
+1. Power on the EV3 by pressing the center button and wait for the main menu to appear. The first time you do this, it may take longer.
+
+   **Note:** When powering it up for the first time, even after the main menu is shown, the EV3 is still configure some settings, and will **restart automatically** after. Please make sure you don't interrupt this process by pressing any buttons on the menu. The whole process usually takes around 10 minutes – my advice is to just leave it alone, grab a cup of coffee and come back later.
+
+1. Once the EV3 is fully booted up, you should see the following screen:
 
    ![](images/ev3/file_browser.png)
 
-   _Tip: the number you see at the top-right of the screen is the battery voltage in volts. A fully charged battery should read somewhere around 8.3 V, and below 6 V, your battery will be running flat soon._
+   This means you are ready to proceed to the next step to connect to WiFi.
+
+   _**Tip:** the number you see at the top-right of the screen is the battery voltage in volts. A fully charged battery should read somewhere around 8.3 V, and below 6 V, your battery will be running flat soon._
+
+   _**Troubleshooting:** if you don't see the screen above, chances are your microSD card was not inserted properly, and thus the EV3 boots to its default OS instead. Try to power off the EV3 (top-left button), and removing and re-inserting the microSD card, making sure that it is not loose._
 
 ## Writing and testing your solutions
 
@@ -345,5 +358,5 @@ For macOS users, we recommend [Etcher](https://etcher.io/). Otherwise, refer to 
 
 Adapted from [the ev3dev website](https://www.ev3dev.org/docs/tutorials/writing-sd-card-image-linux-command-line/).
 
-[latest-img]: https://github.com/source-academy/ev3-source/releases/download/release-v0.1.1/ev3-source-release-v0.1.1.img.zip
+[latest-img]: https://github.com/source-academy/ev3-source/releases/download/release-v0.2.0/ev3-source-release-v0.2.0.img.zip
 [ev3-docs]: https://docs.sourceacademy.org/EV3/
