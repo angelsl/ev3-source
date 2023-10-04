@@ -181,7 +181,7 @@ After 10 seconds, the QR code will automatically disappear. If you need more tim
 
 > #### Method 2: Accessing the EV3 from a browser
 >
-> > In order to do this, make sure you toggle "Enable Webserver" under the ["Source Academy Settings"](#source-academy-settings) file located on the EV3 file browser.
+> > Webserver is disabled by default. In order to do this, make sure you toggle "Enable Webserver" under [Source Academy Settings](#source-academy-settings) located on the EV3 file browser.
 >
 > Using a phone or computer, open `http://172.31.119.87/` in your browser, where `172.31.119.87` is the EV3's local IP address, shown on the top left-hand corner of the EV3's screen. You should get a page similar to below (the QR Code may or may not be shown):
 >
@@ -225,7 +225,7 @@ There are some differences between the full Source §3 and the Source §3 on the
 
 ### Tips
 
-* At any time, if you feel that the device secret has been compromised, you can invalidate and generate a new one using "Invalidate Bot Token" under ["Source Academy Settings"](#source-academy-settings). Afterwards, everyone will need to re-register their device on Source Academy using the new secret.
+* At any time, if you feel that the device secret has been compromised, you can invalidate and generate a new one using "Invalidate Bot Token" under [Source Academy Settings](#source-academy-settings). Afterwards, everyone will need to re-register their device on Source Academy using the new secret.
 * Multiple users can connect to the same device at the same time. If one user clicks "Run", all users will see the device run and the device's output.
 * You can use this feature with the collaborative editing feature so that all members of your Studio can work on the program together. You can also use it with the Google Drive integration to save different programs that you write.
 
@@ -272,9 +272,20 @@ Part of the fun is learning how to troubleshoot. If you have difficulties, start
 
 ### Source Academy Settings
 
-<!-- TODO: Fill up -->
+Source Academy Settings is a one-stop app to manage some of the customizations that are present on the EV3 image. Select "Source Academy Settings" from the file browser to launch it.
+
+You can navigate the UI by using the up and down arrow keys on the EV3, and select an option by pressing the center button. There are the following available options.
+
+|                        Option                        | Description                                                                                                                                                                                                        |
+|:----------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ![Invalidate Bot Token](images/ev3/sa_settings1.png) | Invalidates the device secret and generates a new one. Note that you still need to run the "Show QR Code" app separately in order to regenerate the QR code image.                                                 |
+|      ![Enable SSH](images/ev3/sa_settings2.png)      | Toggles SSH on/off. Off by default. Note that the UI may seem to freeze for a few seconds after pressing this button. This is normal; please do not spam the button or press other buttons while it is processing. |
+|  ![Reset SSH Password](images/ev3/sa_settings3.png)  | Generates a new password for SSH login.                                                                                                                                                                            |
+|   ![Enable Webserver](images/ev3/sa_settings4.png)   | Toggles whether to display the secret in the web server located at the EV3's IP address.                                                                                                                           |
 
 ### SSH-ing to the EV3
+
+> **Note:** SSH is disabled by default. You need to enable SSH via [Source Academy Settings](#source-academy-settings) in order to use this feature.
 
 The EV3 can also be accessed via SSH to get a full command line. To SSH to the EV3, run
 
@@ -284,7 +295,7 @@ ssh robot@192.168.0.1
 
 where `192.168.0.1` is the address shown at the top-left of the EV3.
 
-Enter your password when prompted. The default password is `maker`.
+Enter your password when prompted. The default password is a random string, thus **you will need to generate a password first**. In [Source Academy Settings](#source-academy-settings), click "Reset SSH Password". You will see a pop up with the new password. Take note of this, as this is the only time you will be able to see it. If you ever forget the password, you can generate a new one using this same way.
 
 If you are on Linux or macOS, you should have an SSH client already installed. Windows 10 includes an SSH client from version 1803 onwards. On older versions of Windows, you can use other SSH clients like [PuTTY](http://www.putty.org/). The username is `robot`, and the hostname is the IP address shown on the top-left of the EV3 screen.
 
