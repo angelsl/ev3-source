@@ -279,17 +279,17 @@ For macOS users, we recommend [Etcher](https://etcher.io/). Otherwise, refer to 
 
 #### Linux
 
-1.  Unzip the `ev3-source.img.zip` downloaded earlier to get `ev3-source.img`.
+1. Unzip the `ev3-source.img.zip` downloaded earlier to get `ev3-source.img`.
 
-    ```
+    ```bash
     $ unzip ev3-source.img.zip
     Archive:  ev3-source.img.zip
       inflating: ev3-source.img
     ```
 
-1.  Make sure that you SD card is **unplugged**. Then run `df`. You should see something like this:
+1. Make sure that you SD card is **unplugged**. Then run `df`. You should see something like this:
 
-    ```
+    ```bash
     $ df -h
     Filesystem      Size  Used Avail Use% Mounted on
     /dev/sda1       119G   79G   34G  70% /
@@ -301,9 +301,9 @@ For macOS users, we recommend [Etcher](https://etcher.io/). Otherwise, refer to 
     none            100M  3.7M   97M   4% /run/user
     ```
 
-1.  Now insert your SD card and run `df` again. See the new entry (`/dev/sdb1`)? That is your SD card. `sdb` is the actual device name and `1` is the partition number. Your actual device may be named something different.
+1. Now insert your SD card and run `df` again. See the new entry (`/dev/sdb1`)? That is your SD card. `sdb` is the actual device name and `1` is the partition number. Your actual device may be named something different.
 
-    ```
+    ```bash
     $ df -h
     Filesystem      Size  Used Avail Use% Mounted on
     /dev/sda1       119G   79G   34G  70% /
@@ -316,25 +316,25 @@ For macOS users, we recommend [Etcher](https://etcher.io/). Otherwise, refer to 
     /dev/sdb1       2.0G  0.0G  2.0G   0% /media/user/LABEL
     ```
 
-1.  Unmount your SD card. If it has more than one partition, you will need to do this for each partition.
+1. Unmount your SD card. If it has more than one partition, you will need to do this for each partition.
 
-    ```
+    ```bash
     $ sudo umount /dev/sdb1
     ```
 
-1.  This is the dangerous part. If you pick the wrong device, you could wipe out your hard drive, so BE CAREFUL!! When specifying the device, don't include the partition number.
+1. This is the dangerous part. If you pick the wrong device, you could wipe out your hard drive, so BE CAREFUL!! When specifying the device, don't include the partition number.
 
     In this example we downloaded the compressed disk image file to `~/Downloads/` and our SD card is `/dev/sdb`. Adjust these values as needed. This will take a while.
 
-    ```
+    ```bash
     $ sudo dd if=~/Downloads/ev3-source.img of=/dev/sdb bs=4M \
           oflag=direct status=progress
     [sudo] password for user:
     ```
 
-1.  When copying the image file has completed, run
+1. When copying the image file has completed, run
 
-    ```
+    ```bash
     $ sync
     ```
 
