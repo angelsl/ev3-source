@@ -1,4 +1,6 @@
+<!-- markdownlint-disable-next-line blanks-around-headers -->
 # EV3-Source OS Guide
+{: .no_toc}
 
 Welcome to the world of LEGO Mindstorms EV3! Work together with your teammates to create the best robot and impress everyone.
 
@@ -7,16 +9,16 @@ Welcome to the world of LEGO Mindstorms EV3! Work together with your teammates t
 | [EV3 library documentation][ev3-docs] |
 | [Latest EV3-Source image][latest-img] |
 
-## Contents
+<!-- markdownlint-disable-next-line blanks-around-headers -->
+## Table of Contents
+{: .no_toc}
 
-1. [Setting up your EV3](#1-setting-up-your-ev3)
-1. [Writing and testing your solutions](#2-writing-and-testing-your-solutions)
-1. [Source language](#3-source-language)
-1. [Appendix](#4-appendix)
+1. toc
+{:toc}
 
-## 1 Setting up your EV3
+## Setting up your EV3
 
-### 1.1 Background
+### Background
 
 #### Hardware setup
 
@@ -28,7 +30,7 @@ For the mission, it must be a robot that your Studio has built. Sharing of the s
 
 The environment that we have installed in the microSD card is a Linux distribution from a project called [ev3dev](http://www.ev3dev.org/). You can find out more about it from [the official website](http://www.ev3dev.org/). When you press "Run" in the Source Academy, your programs will be compiled to the Sinter Virtual Machine Language (SVML) by the Source Academy, the SVML code will be sent to the robot through the internet, and the robot then runs the SVML code on the [Sinter virtual machine](https://github.com/source-academy/sinter). (Please review Brief B5 to understand this process.)
 
-### 1.2 Installing the `ev3dev` image
+### Installing the `ev3dev` image
 
 Download the [Source Academy's customised ev3dev image from here][latest-img]. Then, use an image burner of your choice to install the image onto the microSD card issued. You will require a microSD card reader for this. The instructions for each operating system are as follows:
 
@@ -42,7 +44,7 @@ If this does not work, try our [alternative instructions at the end of the page]
 
 Once the image has been flashed onto the microSD card, insert it into the EV3, but do not power it on just yet.
 
-#### 1.3 Starting up the EV3
+#### Starting up the EV3
 
 1. Plug in the WiFi dongle into the USB port of the EV3
 1. Power on the EV3 by pressing the center button and grab a cup of coffee. The first time powering it up, it might take a while to set up the systems automatically. Wait for the main menu to appear, **do not** do anything and just wait for it to restart automatically. This second time should be much faster, and once this is done, you are ready to proceed to the next step to connect to WiFi.
@@ -53,13 +55,13 @@ Once the image has been flashed onto the microSD card, insert it into the EV3, b
 
    _Tip: the number you see at the top-right of the screen is the battery voltage in volts. A fully charged battery should read somewhere around 8.3 V, and below 6 V, your battery will be running flat soon._
 
-## 2 Writing and testing your solutions
+## Writing and testing your solutions
 
-### 2.1 Introduction
+### Introduction
 
 Our customised EV3-Source image is integrated with the Source Academy. You can simply register your device with the Source Academy, write your programs in the playground in remote execution mode, and click "Run" as per normal to run your programs on the robot.
 
-### 2.2 Connecting the EV3 to WiFi
+### Connecting the EV3 to WiFi
 
 The preferred method of connecting the EV3 to the internet is via WiFi. This can be done in the ~~one of~~ the following way~~s~~:
 
@@ -128,7 +130,7 @@ Once you have connected successfully, you should see your EV3's local IP address
 
 ![](images/ev3/ip.png)
 
-### 2.3 Pairing the EV3 to Source Academy
+### Pairing the EV3 to Source Academy
 
 Everyone on the team will have to do the following steps to link their team's EV3 with their Source Academy account. There are two methods to pair the EV3, feel free to choose whichever method is most convenient for you.
 
@@ -182,7 +184,7 @@ Click on the new entry that is created. Once you see "Connected to _<your_device
 
 If you are stuck on "Connecting..." for a while, try selecting the device again to attempt a re-connection.
 
-### 2.4 Some things to take note
+### Some things to take note
 
 This integration is still a work-in-progress, so there are definitely bugs. Please let us know if you encounter any. Note that the "Pause" button, as well as the REPL, chapter and library selectors are non-functional. We are still working on the user interface; please bear with us!
 
@@ -207,7 +209,7 @@ Avoid using large arrays. Note that sparse arrays are not supported, that is, as
 
 For macOS users, if you are running El Capitan (OS X 10.11) or higher, and connect using USB, you might not see 'CDC Composite Gadget' in the interfaces list under network configuration. Try to connect via Bluetooth instead.
 
-### 2.5 Examples
+### Examples
 
 #### Example 1
 
@@ -234,7 +236,7 @@ if (ev3_reflectedLightIntensity(color) > 20) {
 }
 ```
 
-## 3 Source language
+## Source language
 
 The language for this mission is Source §3 (including the list, streams and arrays library), plus the special [EV3 library][ev3-docs].
 
@@ -242,9 +244,9 @@ The language for this mission is Source §3 (including the list, streams and arr
 
 Part of the fun is learning how to troubleshoot. If you have difficulties, start by Googling your problems. For debugging, you can use the `display` function in your programs. The output of `display` will then appear on your screen.
 
-## 4 Appendix
+## Appendix
 
-### 4.1 SSH-ing to the EV3
+### SSH-ing to the EV3
 
 The EV3 can also be accessed via SSH to get a full command line. To SSH to the EV3, run
 
@@ -258,7 +260,7 @@ Enter your password when prompted. The default password is `maker`.
 
 If you are on Linux or macOS, you should have an SSH client already installed. Windows 10 includes an SSH client from version 1803 onwards. On older versions of Windows, you can use other SSH clients like [PuTTY](http://www.putty.org/). The username is `robot`, and the hostname is the IP address shown on the top-left of the EV3 screen.
 
-### 4.2 Alternative flashing instructions
+### Alternative flashing instructions
 
 #### Windows
 
