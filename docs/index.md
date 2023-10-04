@@ -68,7 +68,7 @@ When you press "Run" in the Source Academy, your programs will be compiled to th
 
    _**Troubleshooting:** if you don't see the screen above, chances are your microSD card was not inserted properly, and thus the EV3 boots to its default OS instead. Try to power off the EV3 (top-left button), and removing and re-inserting the microSD card, making sure that it is not loose._
 
-## Writing and testing your solutions
+## Connecting the EV3 to Source Academy
 
 ### Introduction
 
@@ -127,27 +127,29 @@ That's it! If your credentials are correct, the EV3 should connect to NUS_STU wi
 
 <!-- **Note:** NUS Wi-Fi may be having connection issues from time to time. If you see a "Status: Failed" message in the Wi-Fi menu entry for NUS_STU, try toggling the Wi-Fi off and on again. It may take multiple attempts at this. Alternatively, you may use a personal hotspot or other connection methods. -->
 
-> **Alternative connection methods**
+> **Troubleshooting**
 >
-> If connecting to WiFi does not work for some reason, please ask for help, but you may also try the following:
+> If connecting to WiFi does not work for some reason, please **ask for help in the forum**.
 >
-> The EV3 can also connect to your computer/phone over USB or Bluetooth. (The benefit of Bluetooth is, of course, that it is wireless, but it may be slightly less reliable.)
+> Alternatively, the EV3 can also connect to your computer/phone over USB or Bluetooth. (The benefit of Bluetooth is, of course, that it is wireless, but it may be slightly less reliable.)
 >
-> To connect your EV3 to the Internet via Bluetooth, follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/).
+> * To connect your EV3 to the Internet via Bluetooth, follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-bluetooth/).
 >
-> _Note: Bluetooth connection sharing is reported to no longer work with Windows 10. It remains working for macOS and Android. If you cannot use Bluetooth connection sharing, please use an alternative method._
+>   _Note: Bluetooth connection sharing no longer works with Windows 10 onwards. It remains working for macOS and Android. If you cannot use Bluetooth connection sharing, please use an alternative method._
 >
-> To connect your EV3 via the USB wire provided, you can follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/).
+> To connect your EV3 via the USB wire provided, follow [these instructions](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/).
 
 Once you have connected successfully, you should see your EV3's local IP address on the top left-hand corner of the EV3's screen. In this case, it's `192.168.139.113`. This means you are connected.
 
 ![](images/ev3/ip.png)
 
-### Pairing the EV3 to Source Academy
+### Registering your EV3 with Source Academy
 
-Everyone on the team will have to do the following steps to link their team's EV3 with their Source Academy account. There are two methods to pair the EV3, feel free to choose whichever method is most convenient for you.
+Everyone on the team will have to **individually** link their team's EV3 with their own Source Academy account.
 
-#### Method: Scanning a QR code
+There are two methods to register the EV3:
+
+#### Method 1: Scanning a QR code
 
 On a computer/mobile device (the latter is preferred because of a better camera):
 
@@ -171,23 +173,27 @@ Then, on the EV3 device:
 
    ![](images/ev3/qr.png)
 
+   **Note:** There is a bug at the moment in that the first time you run "Show QR Code", the QR code may not be shown properly on the screen. Simply wait for it to disappear, run it again and it should work.
+
 1. Place the EV3 such that the QR code is visible in the computer/phone's camera view in order to scan the QR code
 
 After 10 seconds, the QR code will automatically disappear. If you need more time, simply select "Show QR Code" again. After scanning the code on your computer/phone, click the add button. You have succesfully linked the EV3 to your account!
 
-> #### Alternative Method: Accessing the EV3 from a browser
+> #### Method 2: Accessing the EV3 from a browser
 >
-> Using a phone or computer, open `http://172.31.119.87/` in your browser, where `172.31.119.87` is the EV3's local IP address, shown on the top left-hand corner of the EV3's screen. You should get a page similar to below:
+> > In order to do this, make sure you toggle "Enable Webserver" under the ["Source Academy Settings"](#source-academy-settings) file located on the EV3 file browser.
+>
+> Using a phone or computer, open `http://172.31.119.87/` in your browser, where `172.31.119.87` is the EV3's local IP address, shown on the top left-hand corner of the EV3's screen. You should get a page similar to below (the QR Code may or may not be shown):
 >
 > ![](images/panel.png)
 >
 > Next, choose one of the following:
 >
-> **Method 1 (fastest):** If you're already logged in to Source Academy, click the QR code at the page. This will automatically pop up a dialog for you to pair the device on Source Academy. Give the device a name and add it to your account using similar steps as above. If you are not logged in, we strongly recommend you to log in and use this method.
+> **Method 2a (fastest):** If you're already logged in to Source Academy, click the QR code at the page. This will automatically pop up a dialog for you to pair the device on Source Academy. Give the device a name and add it to your account using similar steps as above. If you are not logged in, we strongly recommend you to log in and use this method.
 >
-> **Method 2 (adding manually):** Copy the device secret at the top of the page, then go to the Source Academy Playground and follow similar steps as above to add the device to your account, manually pasting in the secret.
+> **Method 2b (adding manually):** Copy the device secret at the top of the page, then go to the Source Academy Playground and follow similar steps as above to add the device to your account, manually pasting in the secret.
 >
-> **Method 3 (last resort):** Scan the QR code on the webpage using another device and the [abovementioned method](#method-scanning-a-qr-code).
+> **Method 2c (last resort):** Scan the QR code on the webpage using another device and the [abovementioned method](#method-1-scanning-a-qr-code).
 
 ---
 
@@ -199,28 +205,33 @@ If you are stuck on "Connecting..." for a while, try selecting the device again 
 
 ### Some things to take note
 
-This integration is still a work-in-progress, so there are definitely bugs. Please let us know if you encounter any. Note that the "Pause" button, as well as the REPL, chapter and library selectors are non-functional. We are still working on the user interface; please bear with us!
+If you discover any bugs, please let us know in the forum.
 
-There are some deviations between the full Source §3 and the Source §3 on the device:
+Note that the "Pause" button, as well as the REPL, chapter and library selectors are non-functional. We are still working on the user interface; please bear with us!
 
-- These functions are not (yet) supported:
-  - `list_to_string`
-  - `parse_int`
-  - `get_time`
-  - `prompt`
-  - `stringify`
-- Numbers are single-precision floating points. This means that `16777216 + 1 === 16777216`.
+There are some differences between the full Source §3 and the Source §3 on the device:
 
-Avoid using large arrays. Note that sparse arrays are not supported, that is, assigning to a large index in the array (e.g. `a[500]`) will create an array of 501 elements, the first 500 of which are `undefined`, and consume that much space.
+* These functions are not (yet) supported:
+  * `list_to_string`
+  * `parse_int`
+  * `get_time`
+  * `prompt`
+  * `stringify`
+* Numbers are single-precision floating points. This means that `16777216 + 1 === 16777216`.
 
-#### Tips
+* Avoid using large arrays.
 
-- Multiple users can connect to the same device at the same time. If one user clicks "Run", all users will see the device run and the device's output.
-- You can use this feature with the collaborative editing feature so that all members of your Studio can work on the program together. You can also use it with the Google Drive integration to save different programs that you write.
+  Note that sparse arrays are not supported, that is, assigning to a large index in the array (e.g. `a[500]`) will create an array of 501 elements, the first 500 of which are `undefined`, and consume that much space.
+
+### Tips
+
+* At any time, if you feel that the device secret has been compromised, you can invalidate and generate a new one using "Invalidate Bot Token" under ["Source Academy Settings"](#source-academy-settings). Afterwards, everyone will need to re-register their device on Source Academy using the new secret.
+* Multiple users can connect to the same device at the same time. If one user clicks "Run", all users will see the device run and the device's output.
+* You can use this feature with the collaborative editing feature so that all members of your Studio can work on the program together. You can also use it with the Google Drive integration to save different programs that you write.
 
 #### Troubleshooting
 
-For macOS users, if you are running El Capitan (OS X 10.11) or higher, and connect using USB, you might not see 'CDC Composite Gadget' in the interfaces list under network configuration. Try to connect via Bluetooth instead.
+For macOS users, and connect using USB, you might not see 'CDC Composite Gadget' in the interfaces list under network configuration. Try to connect via Bluetooth instead.
 
 ### Examples
 
@@ -257,7 +268,11 @@ The language for this mission is Source §3 (including the list, streams and arr
 
 Part of the fun is learning how to troubleshoot. If you have difficulties, start by Googling your problems. For debugging, you can use the `display` function in your programs. The output of `display` will then appear on your screen.
 
-## Appendix
+## Advanced
+
+### Source Academy Settings
+
+<!-- TODO: Fill up -->
 
 ### SSH-ing to the EV3
 
@@ -273,19 +288,21 @@ Enter your password when prompted. The default password is `maker`.
 
 If you are on Linux or macOS, you should have an SSH client already installed. Windows 10 includes an SSH client from version 1803 onwards. On older versions of Windows, you can use other SSH clients like [PuTTY](http://www.putty.org/). The username is `robot`, and the hostname is the IP address shown on the top-left of the EV3 screen.
 
+## Appendix
+
 ### Alternative flashing instructions
 
 #### Windows
 
-- Download the Win32DiskImager software from [Sourceforge](https://sourceforge.net/projects/win32diskimager/files/Archive/Win32DiskImager-1.0.0-binary.zip/download).
-- You should get a zip file named "Win32DiskImager-1.0.0-binary.zip".
-- Unzip it and now you have a new folder called "Win32DiskImager-1.0.0-binary".
-- If your computer has a slot for micro SD cards, insert the card. If not, insert the card into an SD card reader, then connect the reader to your computer.
-- Run the file named **Win32DiskImager.exe** (in Windows Vista and higher, you may need to right-click this file and choose "Run as administrator").
-- If the micro SD card (Device) you are using is not found automatically, then click on the drop down box on the right and select the micro SD card letter you just plugged in (e.g. [H:]).
-- Be careful to select the correct drive; if you get the wrong one, you can destroy your data on your computer’s hard disk!
-- In the Image File box, choose the `.img` file that you downloaded and click "Write". _Note: if a warning message appears, click YES._
-- Your microSD card is ready to be used.
+* Download the Win32DiskImager software from [Sourceforge](https://sourceforge.net/projects/win32diskimager/files/Archive/Win32DiskImager-1.0.0-binary.zip/download).
+* You should get a zip file named "Win32DiskImager-1.0.0-binary.zip".
+* Unzip it and now you have a new folder called "Win32DiskImager-1.0.0-binary".
+* If your computer has a slot for micro SD cards, insert the card. If not, insert the card into an SD card reader, then connect the reader to your computer.
+* Run the file named **Win32DiskImager.exe** (in Windows Vista and higher, you may need to right-click this file and choose "Run as administrator").
+* If the micro SD card (Device) you are using is not found automatically, then click on the drop down box on the right and select the micro SD card letter you just plugged in (e.g. [H:]).
+* Be careful to select the correct drive; if you get the wrong one, you can destroy your data on your computer’s hard disk!
+* In the Image File box, choose the `.img` file that you downloaded and click "Write". _Note: if a warning message appears, click YES._
+* Your microSD card is ready to be used.
 
 _Instructions adapted from [udoo](https://www.udoo.org/docs-neo/Getting_Started/Create_a_bootable_MicroSD_card_for_UDOO_Neo.html)_
 
