@@ -1,10 +1,11 @@
+# EV3-Source OS Guide
+
 Welcome to the world of LEGO Mindstorms EV3! Work together with your teammates to create the best robot and impress everyone.
 
-## Quick links
-
-### [EV3 library][ev3-docs]
-
-### [Latest EV3-Source image][latest-img]
+|              Quick Links              |
+|:-------------------------------------:|
+| [EV3 library documentation][ev3-docs] |
+| [Latest EV3-Source image][latest-img] |
 
 ## Contents
 
