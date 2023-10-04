@@ -28,7 +28,6 @@ To build the image from the source code, make sure you are the the root of the r
 ```bash
 wget https://raw.githubusercontent.com/ev3dev/brickstrap/master/src/brickstrap.sh
 ./build_sling.sh
-./build_prompt.sh
 ./build_qrcode.sh
 ./build_uuidtob62.sh
 ./build_image.sh

@@ -29,7 +29,7 @@ jobs:
         run: ./build_uuidtob62.sh
       - name: check the outputs
         run: |
-          file build-ev3/sling build-ev3/sinter_host file build-ev3/executables/show_qrcode build-ev3/executables/nus_login build-ev3/executables/uuidtob62
+          file build-ev3/sling build-ev3/sinter_host file build-ev3/executables/show_qrcode build-ev3/executables/uuidtob62
       - name: make vmlinuz readable
         run: sudo chmod 755 /boot/vmlinuz*
       - name: build image
