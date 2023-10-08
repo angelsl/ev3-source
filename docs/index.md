@@ -42,7 +42,7 @@ When you press "Run" in the Source Academy, your programs will be compiled to th
   
    You may follow this guide (_"Flash the SD card"_ section) [from the ev3dev site](https://www.ev3dev.org/docs/getting-started/#step-2-flash-the-sd-card) to do so.
 
-   **Note: download the [customised EV3-Source image][latest-img], not the ev3dev release image.**
+   **Note: Download the [customised EV3-Source image][latest-img], not the ev3dev release image.**
 
    File Explorer (Windows)/Finder (macOS) may say that it is unable to read the card, or the card needs to be formatted. This is **normal** and can be ignored. Etcher will be able to flash the card.
 
